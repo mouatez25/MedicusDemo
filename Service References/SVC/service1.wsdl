@@ -1,0 +1,3289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceClinique" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IServiceClinique_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="82800000">
+          </wsrm:InactivityTimeout>
+          <wsrm:AcknowledgementInterval Milliseconds="200">
+          </wsrm:AcknowledgementInterval>
+        </wsrm:RMAssertion>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/WpfHost" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceClinique_GetAllRendezVousParMedecin_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRendezVousParMedecin" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllRendezVousParMedecin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRendezVousParMedecinResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllRendezVousParPatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRendezVousParPatient" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllRendezVousParPatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRendezVousParPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllRendezVous_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRendezVous" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllRendezVous_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRendezVousResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllRendezVousAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRendezVousAll" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllRendezVousAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRendezVousAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertRendez_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRendez" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertRendez_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRendezResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateRendezVous_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRendezVous" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateRendezVous_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRendezVousResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteRendezVous_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRendezVous" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteRendezVous_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRendezVousResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllPatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPatient" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllPatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllPatientPAR_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPatientPAR" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllPatientPAR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPatientPARResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllPatienteEXISTE_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPatienteEXISTE" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllPatienteEXISTE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPatienteEXISTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllPatientNomPrenom_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPatientNomPrenom" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllPatientNomPrenom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPatientNomPrenomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllPatientBYID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPatientBYID" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllPatientBYID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPatientBYIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertPatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPatient" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertPatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdatePatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatient" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdatePatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeletePatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePatient" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeletePatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_Connect_InputMessage">
+    <wsdl:part name="parameters" element="tns:Connect" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_Connect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConnectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllClient" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllClientDict_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllClientDict" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllClientDict_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllClientDictResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_ReConnect_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReConnect" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_Say_InputMessage">
+    <wsdl:part name="parameters" element="tns:Say" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_Say_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_Whisper_InputMessage">
+    <wsdl:part name="parameters" element="tns:Whisper" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_IsWriting_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsWriting" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_SendFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendFile" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_SendFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_Disconnect_InputMessage">
+    <wsdl:part name="parameters" element="tns:Disconnect" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_VerificationCle1_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerificationCle1" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_VerificationCle1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerificationCle1Response" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_TestConnect_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestConnect" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_TestConnect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestConnectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterDiagnosticRefresh_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterDiagnosticRefresh" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterDiagnosticRefresh_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterDiagnosticRefreshResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterArrettravailRefresh_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterArrettravailRefresh" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterArrettravailRefresh_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterArrettravailRefreshResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterDictionnaireRefresh_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterDictionnaireRefresh" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterDictionnaireRefresh_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterDictionnaireRefreshResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterProduitOrdonnaceRefresh_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterProduitOrdonnaceRefresh" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterProduitOrdonnaceRefresh_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterProduitOrdonnaceRefreshResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterDepenseRefresh_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterDepenseRefresh" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterDepenseRefresh_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterDepenseRefreshResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterActeCatalogueRefresh_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterActeCatalogueRefresh" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterActeCatalogueRefresh_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterActeCatalogueRefreshResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterSoldeVisiteRefresh_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterSoldeVisiteRefresh" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterSoldeVisiteRefresh_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterSoldeVisiteRefreshResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterPatientRefresh_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterPatientRefresh" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterPatientRefresh_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterPatientRefreshResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterEnteteOrdonnaceOrdonnancePatientRefresh_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterEnteteOrdonnaceOrdonnancePatientRefresh" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterEnteteOrdonnaceOrdonnancePatientRefresh_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterEnteteOrdonnaceOrdonnancePatientRefreshResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterDciiRefresh_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterDciiRefresh" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterDciiRefresh_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterDciiRefreshResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterCasTraitementRefresh_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterCasTraitementRefresh" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterCasTraitementRefresh_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterCasTraitementRefreshResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterTransactionPaiementRefresh_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterTransactionPaiementRefresh" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterTransactionPaiementRefresh_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterTransactionPaiementRefreshResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterSalleAtentefRefresh_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterSalleAtentefRefresh" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterSalleAtentefRefresh_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterSalleAtentefRefreshResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterRendezVOUSfRefresh_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterRendezVOUSfRefresh" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterRendezVOUSfRefresh_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterRendezVOUSfRefreshResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_SalleAttenteDemandeChezLeMedecin_InputMessage">
+    <wsdl:part name="parameters" element="tns:SalleAttenteDemandeChezLeMedecin" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_SalleAttenteDemandeChezLeMedecin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SalleAttenteDemandeChezLeMedecinResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterDicomImageRefresh_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterDicomImageRefresh" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_AjouterDicomImageRefresh_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterDicomImageRefreshResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UploadDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDocument" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UploadDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DownloadDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadDocument" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DownloadDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DownloadDocumentIsHere_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadDocumentIsHere" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DownloadDocumentIsHere_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadDocumentIsHereResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllParamétre_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllParamétre" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllParamétre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllParamétreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateParamétre_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateParamétre" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateParamétre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateParamétreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllDictionnaire_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDictionnaire" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllDictionnaire_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDictionnaireResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertDictionnaire_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDictionnaire" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertDictionnaire_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDictionnaireResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateDictionnaire_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDictionnaire" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateDictionnaire_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDictionnaireResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteDictionnaire_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDictionnaire" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteDictionnaire_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDictionnaireResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllAutreBilan_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAutreBilan" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllAutreBilan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAutreBilanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertAutreBilan_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertAutreBilan" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertAutreBilan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertAutreBilanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateAutreBilan_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAutreBilan" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateAutreBilan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAutreBilanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteAutreBilan_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAutreBilan" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteAutreBilan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAutreBilanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllDiagnostic_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDiagnostic" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllDiagnostic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDiagnosticResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertDiagnostic_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDiagnostic" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertDiagnostic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDiagnosticResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateDiagnostic_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDiagnostic" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateDiagnostic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDiagnosticResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteDiagnostic_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDiagnostic" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteDiagnostic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDiagnosticResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllEnteteOrdonnace_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEnteteOrdonnace" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllEnteteOrdonnace_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEnteteOrdonnaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertEnteteOrdonnace_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertEnteteOrdonnace" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertEnteteOrdonnace_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertEnteteOrdonnaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateEnteteOrdonnace_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEnteteOrdonnace" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateEnteteOrdonnace_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEnteteOrdonnaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteEnteteOrdonnace_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEnteteOrdonnace" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteEnteteOrdonnace_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEnteteOrdonnaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllOrdonnancePatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrdonnancePatient" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllOrdonnancePatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrdonnancePatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertOrdonnancePatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrdonnancePatient" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertOrdonnancePatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrdonnancePatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateOrdonnancePatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrdonnancePatient" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateOrdonnancePatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrdonnancePatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteOrdonnancePatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrdonnancePatient" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteOrdonnancePatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrdonnancePatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllActe_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllActe" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllActe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllActeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertActe_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertActe" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertActe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertActeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateActe_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateActe" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateActe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateActeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteActe_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteActe" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteActe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteActeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllCatalogue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCatalogue" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllCatalogue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCatalogueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertCatalogue_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCatalogue" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertCatalogue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCatalogueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateCatalogue_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCatalogue" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateCatalogue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCatalogueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteCatalogue_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCatalogue" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteCatalogue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCatalogueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllDepeiementMultiple_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDepeiementMultiple" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllDepeiementMultiple_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDepeiementMultipleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertDepeiementMultiple_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDepeiementMultiple" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertDepeiementMultiple_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDepeiementMultipleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateDepeiementMultiple_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDepeiementMultiple" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateDepeiementMultiple_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDepeiementMultipleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteDepeiementMultiple_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDepeiementMultiple" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteDepeiementMultiple_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDepeiementMultipleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllDepeiment_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDepeiment" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllDepeiment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDepeimentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertDepeiment_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDepeiment" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertDepeiment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDepeimentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateDepeiment_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDepeiment" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateDepeiment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDepeimentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteDepeiment_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDepeiment" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteDepeiment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDepeimentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllDicomFichier_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDicomFichier" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllDicomFichier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDicomFichierResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertDicomFichier_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDicomFichier" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateDicomFichier_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDicomFichier" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateDicomFichier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDicomFichierResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteDicomFichier_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDicomFichier" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteDicomFichier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDicomFichierResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllArretDetravail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllArretDetravail" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllArretDetravail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllArretDetravailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertArretDetravail_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertArretDetravail" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertArretDetravail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertArretDetravailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteArretDetravail_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteArretDetravail" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteArretDetravail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteArretDetravailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllProduitOrdonnance_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProduitOrdonnance" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllProduitOrdonnance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProduitOrdonnanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertProduitOrdonnance_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProduitOrdonnance" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertProduitOrdonnance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProduitOrdonnanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateProduitOrdonnance_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProduitOrdonnance" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateProduitOrdonnance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProduitOrdonnanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteProduitOrdonnance_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProduitOrdonnance" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteProduitOrdonnance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProduitOrdonnanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllDci_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDci" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllDci_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDciResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertDci_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDci" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertDci_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDciResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateDci_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDci" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateDci_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDciResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeletDci_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletDci" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeletDci_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletDciResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllDepense_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDepense" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllDepense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDepenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertDepense_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDepense" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertDepense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDepenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateDepense_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDepense" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateDepense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDepenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteDepense_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDepense" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteDepense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDepenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllMotifDepense_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMotifDepense" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllMotifDepense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMotifDepenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertMotifDepense_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMotifDepense" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateMotifDepense_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMotifDepense" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateMotifDepense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMotifDepenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteMotifDepense_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMotifDepense" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteMotifDepense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMotifDepenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllSalleDattente_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSalleDattente" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllSalleDattente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSalleDattenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllSalleDattenteALL_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSalleDattenteALL" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllSalleDattenteALL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSalleDattenteALLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertSalleDatente_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSalleDatente" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertSalleDatente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSalleDatenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateSalleDattente_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSalleDattente" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateSalleDattente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSalleDattenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteSalleDattente_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSalleDattente" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteSalleDattente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSalleDattenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllTypeCas_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTypeCas" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllTypeCas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTypeCasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertTypeCas_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTypeCas" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateTypeCas_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTypeCas" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateTypeCas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTypeCasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteTypeCas_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTypeCas" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteTypeCas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTypeCasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllConstantes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllConstantes" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllConstantes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllConstantesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllConstantesByPatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllConstantesByPatient" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllConstantesByPatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllConstantesByPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertConstante_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertConstante" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertConstante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertConstanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateConstante_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateConstante" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateConstante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateConstanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteConstante_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteConstante" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteConstante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteConstanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllTraitement_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTraitement" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllTraitement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTraitementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertTypeTraitement_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTypeTraitement" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertTypeTraitement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTypeTraitementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateTypeTraitement_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTypeTraitement" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateTypeTraitement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTypeTraitementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteTypeTraitement_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTypeTraitement" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteTypeTraitement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTypeTraitementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllVisite_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllVisite" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllVisite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllVisiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllVisiteAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllVisiteAll" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllVisiteAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllVisiteAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllVisiteByVisite_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllVisiteByVisite" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllVisiteByVisite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllVisiteByVisiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllVisiteByClepatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllVisiteByClepatient" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllVisiteByClepatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllVisiteByClepatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllVisiteByVisiteMedecin_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllVisiteByVisiteMedecin" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllVisiteByVisiteMedecin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllVisiteByVisiteMedecinResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertVisite_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertVisite" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertVisite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertVisiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateVisite_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateVisite" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateVisite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateVisiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteVisite_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteVisite" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteVisite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteVisiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllMedecin_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMedecin" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllMedecin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMedecinResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertMedecin_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMedecin" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertMedecin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMedecinResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateMedecin_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMedecin" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateMedecin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMedecinResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteMedecin_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMedecin" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteMedecin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMedecinResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllSpécialité_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSpécialité" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllSpécialité_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSpécialitéResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertSpécialité_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSpécialité" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertSpécialité_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSpécialitéResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateSpécialité_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSpécialité" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateSpécialité_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSpécialitéResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteSpécialité_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSpécialité" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteSpécialité_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSpécialitéResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllMotifVisite_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMotifVisite" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllMotifVisite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMotifVisiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertMotifVisite_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMotifVisite" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertMotifVisite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMotifVisiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateMotifVisite_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMotifVisite" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateMotifVisite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMotifVisiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteMotifVisite_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMotifVisite" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteMotifVisite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMotifVisiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllMembership_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMembership" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllMembership_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMembershipResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertMembership_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMembership" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertMembership_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMembershipResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateMembership_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMembership" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateMembership_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMembershipResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteMembership_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMembership" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteMembership_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMembershipResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllExclusionDay_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllExclusionDay" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_GetAllExclusionDay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllExclusionDayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertExclusionDay_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertExclusionDay" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_InsertExclusionDay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertExclusionDayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateExclusionDay_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateExclusionDay" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UpdateExclusionDay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateExclusionDayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteExclusionDay_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteExclusionDay" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_DeleteExclusionDay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteExclusionDayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshArretDetravails_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshArretDetravails" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshClients_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshClients" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshMembership_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshMembership" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshMedecin_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshMedecin" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshPatient_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshPatient" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshSpécialité_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshSpécialité" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshRendezVous_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshRendezVous" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshDepense_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshDepense" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshMotifDepense_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshMotifDepense" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshMotifVisite_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshMotifVisite" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshTypeCas_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshTypeCas" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshCasTraitement_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshCasTraitement" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshVisite_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshVisite" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshConstante_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshConstante" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshDicom_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshDicom" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshParametre_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshParametre" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshSalleDattente_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshSalleDattente" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshDictionnaire_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshDictionnaire" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshEcranAcceuil_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshEcranAcceuil" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshDepeiment_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshDepeiment" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshDepeimentMultiple_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshDepeimentMultiple" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshDci_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshDci" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshCatalogue_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshCatalogue" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshActe_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshActe" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshProduitOrdonnance_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshProduitOrdonnance" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshOrdonnancePatient_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshOrdonnancePatient" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshEnteteOrdonnace_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshEnteteOrdonnace" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_RefreshDiagnostic_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshDiagnostic" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_Receive_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:Receive" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_ReceiveWhisper_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ReceiveWhisper" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_IsWritingCallback_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:IsWritingCallback" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_ReceiverFile_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ReceiverFile" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UserJoin_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:UserJoin" />
+  </wsdl:message>
+  <wsdl:message name="IServiceClinique_UserLeave_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:UserLeave" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="true" name="IServiceClinique">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllRendezVousParMedecin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllRendezVousParMedecin" message="tns:IServiceClinique_GetAllRendezVousParMedecin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllRendezVousParMedecinResponse" message="tns:IServiceClinique_GetAllRendezVousParMedecin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllRendezVousParPatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllRendezVousParPatient" message="tns:IServiceClinique_GetAllRendezVousParPatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllRendezVousParPatientResponse" message="tns:IServiceClinique_GetAllRendezVousParPatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllRendezVous">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllRendezVous" message="tns:IServiceClinique_GetAllRendezVous_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllRendezVousResponse" message="tns:IServiceClinique_GetAllRendezVous_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllRendezVousAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllRendezVousAll" message="tns:IServiceClinique_GetAllRendezVousAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllRendezVousAllResponse" message="tns:IServiceClinique_GetAllRendezVousAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertRendez">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertRendez" message="tns:IServiceClinique_InsertRendez_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/InsertRendezResponse" message="tns:IServiceClinique_InsertRendez_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateRendezVous">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateRendezVous" message="tns:IServiceClinique_UpdateRendezVous_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateRendezVousResponse" message="tns:IServiceClinique_UpdateRendezVous_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteRendezVous">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeleteRendezVous" message="tns:IServiceClinique_DeleteRendezVous_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeleteRendezVousResponse" message="tns:IServiceClinique_DeleteRendezVous_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllPatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllPatient" message="tns:IServiceClinique_GetAllPatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllPatientResponse" message="tns:IServiceClinique_GetAllPatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllPatientPAR">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllPatientPAR" message="tns:IServiceClinique_GetAllPatientPAR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllPatientPARResponse" message="tns:IServiceClinique_GetAllPatientPAR_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllPatienteEXISTE">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllPatienteEXISTE" message="tns:IServiceClinique_GetAllPatienteEXISTE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllPatienteEXISTEResponse" message="tns:IServiceClinique_GetAllPatienteEXISTE_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllPatientNomPrenom">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllPatientNomPrenom" message="tns:IServiceClinique_GetAllPatientNomPrenom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllPatientNomPrenomResponse" message="tns:IServiceClinique_GetAllPatientNomPrenom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllPatientBYID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllPatientBYID" message="tns:IServiceClinique_GetAllPatientBYID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllPatientBYIDResponse" message="tns:IServiceClinique_GetAllPatientBYID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertPatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertPatient" message="tns:IServiceClinique_InsertPatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/InsertPatientResponse" message="tns:IServiceClinique_InsertPatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdatePatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdatePatient" message="tns:IServiceClinique_UpdatePatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdatePatientResponse" message="tns:IServiceClinique_UpdatePatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeletePatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeletePatient" message="tns:IServiceClinique_DeletePatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeletePatientResponse" message="tns:IServiceClinique_DeletePatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Connect">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/Connect" message="tns:IServiceClinique_Connect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/ConnectResponse" message="tns:IServiceClinique_Connect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllClient" message="tns:IServiceClinique_GetAllClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllClientResponse" message="tns:IServiceClinique_GetAllClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllClientDict">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllClientDict" message="tns:IServiceClinique_GetAllClientDict_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllClientDictResponse" message="tns:IServiceClinique_GetAllClientDict_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ReConnect">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/ReConnect" message="tns:IServiceClinique_ReConnect_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Say">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/Say" message="tns:IServiceClinique_Say_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/SayResponse" message="tns:IServiceClinique_Say_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Whisper">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/Whisper" message="tns:IServiceClinique_Whisper_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="IsWriting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/IsWriting" message="tns:IServiceClinique_IsWriting_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SendFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/SendFile" message="tns:IServiceClinique_SendFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/SendFileResponse" message="tns:IServiceClinique_SendFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="true" name="Disconnect">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/Disconnect" message="tns:IServiceClinique_Disconnect_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="VerificationCle1">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/VerificationCle1" message="tns:IServiceClinique_VerificationCle1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/VerificationCle1Response" message="tns:IServiceClinique_VerificationCle1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="TestConnect">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/TestConnect" message="tns:IServiceClinique_TestConnect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/TestConnectResponse" message="tns:IServiceClinique_TestConnect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AjouterDiagnosticRefresh">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/AjouterDiagnosticRefresh" message="tns:IServiceClinique_AjouterDiagnosticRefresh_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/AjouterDiagnosticRefreshResponse" message="tns:IServiceClinique_AjouterDiagnosticRefresh_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AjouterArrettravailRefresh">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/AjouterArrettravailRefresh" message="tns:IServiceClinique_AjouterArrettravailRefresh_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/AjouterArrettravailRefreshResponse" message="tns:IServiceClinique_AjouterArrettravailRefresh_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AjouterDictionnaireRefresh">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/AjouterDictionnaireRefresh" message="tns:IServiceClinique_AjouterDictionnaireRefresh_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/AjouterDictionnaireRefreshResponse" message="tns:IServiceClinique_AjouterDictionnaireRefresh_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AjouterProduitOrdonnaceRefresh">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/AjouterProduitOrdonnaceRefresh" message="tns:IServiceClinique_AjouterProduitOrdonnaceRefresh_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/AjouterProduitOrdonnaceRefreshResponse" message="tns:IServiceClinique_AjouterProduitOrdonnaceRefresh_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AjouterDepenseRefresh">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/AjouterDepenseRefresh" message="tns:IServiceClinique_AjouterDepenseRefresh_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/AjouterDepenseRefreshResponse" message="tns:IServiceClinique_AjouterDepenseRefresh_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AjouterActeCatalogueRefresh">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/AjouterActeCatalogueRefresh" message="tns:IServiceClinique_AjouterActeCatalogueRefresh_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/AjouterActeCatalogueRefreshResponse" message="tns:IServiceClinique_AjouterActeCatalogueRefresh_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AjouterSoldeVisiteRefresh">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/AjouterSoldeVisiteRefresh" message="tns:IServiceClinique_AjouterSoldeVisiteRefresh_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/AjouterSoldeVisiteRefreshResponse" message="tns:IServiceClinique_AjouterSoldeVisiteRefresh_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AjouterPatientRefresh">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/AjouterPatientRefresh" message="tns:IServiceClinique_AjouterPatientRefresh_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/AjouterPatientRefreshResponse" message="tns:IServiceClinique_AjouterPatientRefresh_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AjouterEnteteOrdonnaceOrdonnancePatientRefresh">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/AjouterEnteteOrdonnaceOrdonnancePatientRefresh" message="tns:IServiceClinique_AjouterEnteteOrdonnaceOrdonnancePatientRefresh_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/AjouterEnteteOrdonnaceOrdonnancePatientRefreshResponse" message="tns:IServiceClinique_AjouterEnteteOrdonnaceOrdonnancePatientRefresh_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AjouterDciiRefresh">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/AjouterDciiRefresh" message="tns:IServiceClinique_AjouterDciiRefresh_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/AjouterDciiRefreshResponse" message="tns:IServiceClinique_AjouterDciiRefresh_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AjouterCasTraitementRefresh">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/AjouterCasTraitementRefresh" message="tns:IServiceClinique_AjouterCasTraitementRefresh_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/AjouterCasTraitementRefreshResponse" message="tns:IServiceClinique_AjouterCasTraitementRefresh_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AjouterTransactionPaiementRefresh">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/AjouterTransactionPaiementRefresh" message="tns:IServiceClinique_AjouterTransactionPaiementRefresh_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/AjouterTransactionPaiementRefreshResponse" message="tns:IServiceClinique_AjouterTransactionPaiementRefresh_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AjouterSalleAtentefRefresh">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/AjouterSalleAtentefRefresh" message="tns:IServiceClinique_AjouterSalleAtentefRefresh_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/AjouterSalleAtentefRefreshResponse" message="tns:IServiceClinique_AjouterSalleAtentefRefresh_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AjouterRendezVOUSfRefresh">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/AjouterRendezVOUSfRefresh" message="tns:IServiceClinique_AjouterRendezVOUSfRefresh_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/AjouterRendezVOUSfRefreshResponse" message="tns:IServiceClinique_AjouterRendezVOUSfRefresh_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SalleAttenteDemandeChezLeMedecin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/SalleAttenteDemandeChezLeMedecin" message="tns:IServiceClinique_SalleAttenteDemandeChezLeMedecin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/SalleAttenteDemandeChezLeMedecinResponse" message="tns:IServiceClinique_SalleAttenteDemandeChezLeMedecin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AjouterDicomImageRefresh">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/AjouterDicomImageRefresh" message="tns:IServiceClinique_AjouterDicomImageRefresh_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/AjouterDicomImageRefreshResponse" message="tns:IServiceClinique_AjouterDicomImageRefresh_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UploadDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UploadDocument" message="tns:IServiceClinique_UploadDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UploadDocumentResponse" message="tns:IServiceClinique_UploadDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DownloadDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DownloadDocument" message="tns:IServiceClinique_DownloadDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DownloadDocumentResponse" message="tns:IServiceClinique_DownloadDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DownloadDocumentIsHere">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DownloadDocumentIsHere" message="tns:IServiceClinique_DownloadDocumentIsHere_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DownloadDocumentIsHereResponse" message="tns:IServiceClinique_DownloadDocumentIsHere_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllParamétre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllParamétre" message="tns:IServiceClinique_GetAllParamétre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllParamétreResponse" message="tns:IServiceClinique_GetAllParamétre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateParamétre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateParamétre" message="tns:IServiceClinique_UpdateParamétre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateParamétreResponse" message="tns:IServiceClinique_UpdateParamétre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllDictionnaire">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllDictionnaire" message="tns:IServiceClinique_GetAllDictionnaire_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllDictionnaireResponse" message="tns:IServiceClinique_GetAllDictionnaire_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertDictionnaire">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertDictionnaire" message="tns:IServiceClinique_InsertDictionnaire_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/InsertDictionnaireResponse" message="tns:IServiceClinique_InsertDictionnaire_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateDictionnaire">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateDictionnaire" message="tns:IServiceClinique_UpdateDictionnaire_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateDictionnaireResponse" message="tns:IServiceClinique_UpdateDictionnaire_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteDictionnaire">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeleteDictionnaire" message="tns:IServiceClinique_DeleteDictionnaire_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeleteDictionnaireResponse" message="tns:IServiceClinique_DeleteDictionnaire_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllAutreBilan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllAutreBilan" message="tns:IServiceClinique_GetAllAutreBilan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllAutreBilanResponse" message="tns:IServiceClinique_GetAllAutreBilan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertAutreBilan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertAutreBilan" message="tns:IServiceClinique_InsertAutreBilan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/InsertAutreBilanResponse" message="tns:IServiceClinique_InsertAutreBilan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateAutreBilan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateAutreBilan" message="tns:IServiceClinique_UpdateAutreBilan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateAutreBilanResponse" message="tns:IServiceClinique_UpdateAutreBilan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteAutreBilan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeleteAutreBilan" message="tns:IServiceClinique_DeleteAutreBilan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeleteAutreBilanResponse" message="tns:IServiceClinique_DeleteAutreBilan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllDiagnostic">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllDiagnostic" message="tns:IServiceClinique_GetAllDiagnostic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllDiagnosticResponse" message="tns:IServiceClinique_GetAllDiagnostic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertDiagnostic">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertDiagnostic" message="tns:IServiceClinique_InsertDiagnostic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/InsertDiagnosticResponse" message="tns:IServiceClinique_InsertDiagnostic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateDiagnostic">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateDiagnostic" message="tns:IServiceClinique_UpdateDiagnostic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateDiagnosticResponse" message="tns:IServiceClinique_UpdateDiagnostic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteDiagnostic">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeleteDiagnostic" message="tns:IServiceClinique_DeleteDiagnostic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeleteDiagnosticResponse" message="tns:IServiceClinique_DeleteDiagnostic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllEnteteOrdonnace">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllEnteteOrdonnace" message="tns:IServiceClinique_GetAllEnteteOrdonnace_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllEnteteOrdonnaceResponse" message="tns:IServiceClinique_GetAllEnteteOrdonnace_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertEnteteOrdonnace">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertEnteteOrdonnace" message="tns:IServiceClinique_InsertEnteteOrdonnace_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/InsertEnteteOrdonnaceResponse" message="tns:IServiceClinique_InsertEnteteOrdonnace_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateEnteteOrdonnace">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateEnteteOrdonnace" message="tns:IServiceClinique_UpdateEnteteOrdonnace_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateEnteteOrdonnaceResponse" message="tns:IServiceClinique_UpdateEnteteOrdonnace_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteEnteteOrdonnace">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeleteEnteteOrdonnace" message="tns:IServiceClinique_DeleteEnteteOrdonnace_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeleteEnteteOrdonnaceResponse" message="tns:IServiceClinique_DeleteEnteteOrdonnace_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllOrdonnancePatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllOrdonnancePatient" message="tns:IServiceClinique_GetAllOrdonnancePatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllOrdonnancePatientResponse" message="tns:IServiceClinique_GetAllOrdonnancePatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertOrdonnancePatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertOrdonnancePatient" message="tns:IServiceClinique_InsertOrdonnancePatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/InsertOrdonnancePatientResponse" message="tns:IServiceClinique_InsertOrdonnancePatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateOrdonnancePatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateOrdonnancePatient" message="tns:IServiceClinique_UpdateOrdonnancePatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateOrdonnancePatientResponse" message="tns:IServiceClinique_UpdateOrdonnancePatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteOrdonnancePatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeleteOrdonnancePatient" message="tns:IServiceClinique_DeleteOrdonnancePatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeleteOrdonnancePatientResponse" message="tns:IServiceClinique_DeleteOrdonnancePatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllActe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllActe" message="tns:IServiceClinique_GetAllActe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllActeResponse" message="tns:IServiceClinique_GetAllActe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertActe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertActe" message="tns:IServiceClinique_InsertActe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/InsertActeResponse" message="tns:IServiceClinique_InsertActe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateActe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateActe" message="tns:IServiceClinique_UpdateActe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateActeResponse" message="tns:IServiceClinique_UpdateActe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteActe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeleteActe" message="tns:IServiceClinique_DeleteActe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeleteActeResponse" message="tns:IServiceClinique_DeleteActe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllCatalogue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllCatalogue" message="tns:IServiceClinique_GetAllCatalogue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllCatalogueResponse" message="tns:IServiceClinique_GetAllCatalogue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertCatalogue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertCatalogue" message="tns:IServiceClinique_InsertCatalogue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/InsertCatalogueResponse" message="tns:IServiceClinique_InsertCatalogue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateCatalogue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateCatalogue" message="tns:IServiceClinique_UpdateCatalogue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateCatalogueResponse" message="tns:IServiceClinique_UpdateCatalogue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteCatalogue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeleteCatalogue" message="tns:IServiceClinique_DeleteCatalogue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeleteCatalogueResponse" message="tns:IServiceClinique_DeleteCatalogue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllDepeiementMultiple">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllDepeiementMultiple" message="tns:IServiceClinique_GetAllDepeiementMultiple_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllDepeiementMultipleResponse" message="tns:IServiceClinique_GetAllDepeiementMultiple_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertDepeiementMultiple">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertDepeiementMultiple" message="tns:IServiceClinique_InsertDepeiementMultiple_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/InsertDepeiementMultipleResponse" message="tns:IServiceClinique_InsertDepeiementMultiple_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateDepeiementMultiple">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateDepeiementMultiple" message="tns:IServiceClinique_UpdateDepeiementMultiple_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateDepeiementMultipleResponse" message="tns:IServiceClinique_UpdateDepeiementMultiple_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteDepeiementMultiple">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeleteDepeiementMultiple" message="tns:IServiceClinique_DeleteDepeiementMultiple_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeleteDepeiementMultipleResponse" message="tns:IServiceClinique_DeleteDepeiementMultiple_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllDepeiment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllDepeiment" message="tns:IServiceClinique_GetAllDepeiment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllDepeimentResponse" message="tns:IServiceClinique_GetAllDepeiment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertDepeiment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertDepeiment" message="tns:IServiceClinique_InsertDepeiment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/InsertDepeimentResponse" message="tns:IServiceClinique_InsertDepeiment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateDepeiment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateDepeiment" message="tns:IServiceClinique_UpdateDepeiment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateDepeimentResponse" message="tns:IServiceClinique_UpdateDepeiment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteDepeiment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeleteDepeiment" message="tns:IServiceClinique_DeleteDepeiment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeleteDepeimentResponse" message="tns:IServiceClinique_DeleteDepeiment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllDicomFichier">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllDicomFichier" message="tns:IServiceClinique_GetAllDicomFichier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllDicomFichierResponse" message="tns:IServiceClinique_GetAllDicomFichier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertDicomFichier">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertDicomFichier" message="tns:IServiceClinique_InsertDicomFichier_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateDicomFichier">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateDicomFichier" message="tns:IServiceClinique_UpdateDicomFichier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateDicomFichierResponse" message="tns:IServiceClinique_UpdateDicomFichier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteDicomFichier">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeleteDicomFichier" message="tns:IServiceClinique_DeleteDicomFichier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeleteDicomFichierResponse" message="tns:IServiceClinique_DeleteDicomFichier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllArretDetravail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllArretDetravail" message="tns:IServiceClinique_GetAllArretDetravail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllArretDetravailResponse" message="tns:IServiceClinique_GetAllArretDetravail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertArretDetravail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertArretDetravail" message="tns:IServiceClinique_InsertArretDetravail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/InsertArretDetravailResponse" message="tns:IServiceClinique_InsertArretDetravail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteArretDetravail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeleteArretDetravail" message="tns:IServiceClinique_DeleteArretDetravail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeleteArretDetravailResponse" message="tns:IServiceClinique_DeleteArretDetravail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllProduitOrdonnance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllProduitOrdonnance" message="tns:IServiceClinique_GetAllProduitOrdonnance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllProduitOrdonnanceResponse" message="tns:IServiceClinique_GetAllProduitOrdonnance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertProduitOrdonnance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertProduitOrdonnance" message="tns:IServiceClinique_InsertProduitOrdonnance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/InsertProduitOrdonnanceResponse" message="tns:IServiceClinique_InsertProduitOrdonnance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateProduitOrdonnance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateProduitOrdonnance" message="tns:IServiceClinique_UpdateProduitOrdonnance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateProduitOrdonnanceResponse" message="tns:IServiceClinique_UpdateProduitOrdonnance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteProduitOrdonnance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeleteProduitOrdonnance" message="tns:IServiceClinique_DeleteProduitOrdonnance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeleteProduitOrdonnanceResponse" message="tns:IServiceClinique_DeleteProduitOrdonnance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllDci">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllDci" message="tns:IServiceClinique_GetAllDci_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllDciResponse" message="tns:IServiceClinique_GetAllDci_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertDci">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertDci" message="tns:IServiceClinique_InsertDci_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/InsertDciResponse" message="tns:IServiceClinique_InsertDci_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateDci">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateDci" message="tns:IServiceClinique_UpdateDci_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateDciResponse" message="tns:IServiceClinique_UpdateDci_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeletDci">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeletDci" message="tns:IServiceClinique_DeletDci_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeletDciResponse" message="tns:IServiceClinique_DeletDci_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllDepense">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllDepense" message="tns:IServiceClinique_GetAllDepense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllDepenseResponse" message="tns:IServiceClinique_GetAllDepense_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertDepense">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertDepense" message="tns:IServiceClinique_InsertDepense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/InsertDepenseResponse" message="tns:IServiceClinique_InsertDepense_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateDepense">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateDepense" message="tns:IServiceClinique_UpdateDepense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateDepenseResponse" message="tns:IServiceClinique_UpdateDepense_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteDepense">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeleteDepense" message="tns:IServiceClinique_DeleteDepense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeleteDepenseResponse" message="tns:IServiceClinique_DeleteDepense_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllMotifDepense">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllMotifDepense" message="tns:IServiceClinique_GetAllMotifDepense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllMotifDepenseResponse" message="tns:IServiceClinique_GetAllMotifDepense_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertMotifDepense">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertMotifDepense" message="tns:IServiceClinique_InsertMotifDepense_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateMotifDepense">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateMotifDepense" message="tns:IServiceClinique_UpdateMotifDepense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateMotifDepenseResponse" message="tns:IServiceClinique_UpdateMotifDepense_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteMotifDepense">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeleteMotifDepense" message="tns:IServiceClinique_DeleteMotifDepense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeleteMotifDepenseResponse" message="tns:IServiceClinique_DeleteMotifDepense_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllSalleDattente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllSalleDattente" message="tns:IServiceClinique_GetAllSalleDattente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllSalleDattenteResponse" message="tns:IServiceClinique_GetAllSalleDattente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllSalleDattenteALL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllSalleDattenteALL" message="tns:IServiceClinique_GetAllSalleDattenteALL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllSalleDattenteALLResponse" message="tns:IServiceClinique_GetAllSalleDattenteALL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertSalleDatente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertSalleDatente" message="tns:IServiceClinique_InsertSalleDatente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/InsertSalleDatenteResponse" message="tns:IServiceClinique_InsertSalleDatente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateSalleDattente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateSalleDattente" message="tns:IServiceClinique_UpdateSalleDattente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateSalleDattenteResponse" message="tns:IServiceClinique_UpdateSalleDattente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteSalleDattente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeleteSalleDattente" message="tns:IServiceClinique_DeleteSalleDattente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeleteSalleDattenteResponse" message="tns:IServiceClinique_DeleteSalleDattente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllTypeCas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllTypeCas" message="tns:IServiceClinique_GetAllTypeCas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllTypeCasResponse" message="tns:IServiceClinique_GetAllTypeCas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertTypeCas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertTypeCas" message="tns:IServiceClinique_InsertTypeCas_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateTypeCas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateTypeCas" message="tns:IServiceClinique_UpdateTypeCas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateTypeCasResponse" message="tns:IServiceClinique_UpdateTypeCas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteTypeCas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeleteTypeCas" message="tns:IServiceClinique_DeleteTypeCas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeleteTypeCasResponse" message="tns:IServiceClinique_DeleteTypeCas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllConstantes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllConstantes" message="tns:IServiceClinique_GetAllConstantes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllConstantesResponse" message="tns:IServiceClinique_GetAllConstantes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllConstantesByPatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllConstantesByPatient" message="tns:IServiceClinique_GetAllConstantesByPatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllConstantesByPatientResponse" message="tns:IServiceClinique_GetAllConstantesByPatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertConstante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertConstante" message="tns:IServiceClinique_InsertConstante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/InsertConstanteResponse" message="tns:IServiceClinique_InsertConstante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateConstante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateConstante" message="tns:IServiceClinique_UpdateConstante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateConstanteResponse" message="tns:IServiceClinique_UpdateConstante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteConstante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeleteConstante" message="tns:IServiceClinique_DeleteConstante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeleteConstanteResponse" message="tns:IServiceClinique_DeleteConstante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllTraitement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllTraitement" message="tns:IServiceClinique_GetAllTraitement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllTraitementResponse" message="tns:IServiceClinique_GetAllTraitement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertTypeTraitement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertTypeTraitement" message="tns:IServiceClinique_InsertTypeTraitement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/InsertTypeTraitementResponse" message="tns:IServiceClinique_InsertTypeTraitement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateTypeTraitement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateTypeTraitement" message="tns:IServiceClinique_UpdateTypeTraitement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateTypeTraitementResponse" message="tns:IServiceClinique_UpdateTypeTraitement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteTypeTraitement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeleteTypeTraitement" message="tns:IServiceClinique_DeleteTypeTraitement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeleteTypeTraitementResponse" message="tns:IServiceClinique_DeleteTypeTraitement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllVisite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllVisite" message="tns:IServiceClinique_GetAllVisite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllVisiteResponse" message="tns:IServiceClinique_GetAllVisite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllVisiteAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllVisiteAll" message="tns:IServiceClinique_GetAllVisiteAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllVisiteAllResponse" message="tns:IServiceClinique_GetAllVisiteAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllVisiteByVisite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllVisiteByVisite" message="tns:IServiceClinique_GetAllVisiteByVisite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllVisiteByVisiteResponse" message="tns:IServiceClinique_GetAllVisiteByVisite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllVisiteByClepatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllVisiteByClepatient" message="tns:IServiceClinique_GetAllVisiteByClepatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllVisiteByClepatientResponse" message="tns:IServiceClinique_GetAllVisiteByClepatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllVisiteByVisiteMedecin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllVisiteByVisiteMedecin" message="tns:IServiceClinique_GetAllVisiteByVisiteMedecin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllVisiteByVisiteMedecinResponse" message="tns:IServiceClinique_GetAllVisiteByVisiteMedecin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertVisite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertVisite" message="tns:IServiceClinique_InsertVisite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/InsertVisiteResponse" message="tns:IServiceClinique_InsertVisite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateVisite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateVisite" message="tns:IServiceClinique_UpdateVisite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateVisiteResponse" message="tns:IServiceClinique_UpdateVisite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteVisite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeleteVisite" message="tns:IServiceClinique_DeleteVisite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeleteVisiteResponse" message="tns:IServiceClinique_DeleteVisite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllMedecin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllMedecin" message="tns:IServiceClinique_GetAllMedecin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllMedecinResponse" message="tns:IServiceClinique_GetAllMedecin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertMedecin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertMedecin" message="tns:IServiceClinique_InsertMedecin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/InsertMedecinResponse" message="tns:IServiceClinique_InsertMedecin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateMedecin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateMedecin" message="tns:IServiceClinique_UpdateMedecin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateMedecinResponse" message="tns:IServiceClinique_UpdateMedecin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteMedecin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeleteMedecin" message="tns:IServiceClinique_DeleteMedecin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeleteMedecinResponse" message="tns:IServiceClinique_DeleteMedecin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllSpécialité">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllSpécialité" message="tns:IServiceClinique_GetAllSpécialité_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllSpécialitéResponse" message="tns:IServiceClinique_GetAllSpécialité_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertSpécialité">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertSpécialité" message="tns:IServiceClinique_InsertSpécialité_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/InsertSpécialitéResponse" message="tns:IServiceClinique_InsertSpécialité_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateSpécialité">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateSpécialité" message="tns:IServiceClinique_UpdateSpécialité_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateSpécialitéResponse" message="tns:IServiceClinique_UpdateSpécialité_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteSpécialité">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeleteSpécialité" message="tns:IServiceClinique_DeleteSpécialité_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeleteSpécialitéResponse" message="tns:IServiceClinique_DeleteSpécialité_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllMotifVisite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllMotifVisite" message="tns:IServiceClinique_GetAllMotifVisite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllMotifVisiteResponse" message="tns:IServiceClinique_GetAllMotifVisite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertMotifVisite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertMotifVisite" message="tns:IServiceClinique_InsertMotifVisite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/InsertMotifVisiteResponse" message="tns:IServiceClinique_InsertMotifVisite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateMotifVisite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateMotifVisite" message="tns:IServiceClinique_UpdateMotifVisite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateMotifVisiteResponse" message="tns:IServiceClinique_UpdateMotifVisite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteMotifVisite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeleteMotifVisite" message="tns:IServiceClinique_DeleteMotifVisite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeleteMotifVisiteResponse" message="tns:IServiceClinique_DeleteMotifVisite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllMembership">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllMembership" message="tns:IServiceClinique_GetAllMembership_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllMembershipResponse" message="tns:IServiceClinique_GetAllMembership_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertMembership">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertMembership" message="tns:IServiceClinique_InsertMembership_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/InsertMembershipResponse" message="tns:IServiceClinique_InsertMembership_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateMembership">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateMembership" message="tns:IServiceClinique_UpdateMembership_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateMembershipResponse" message="tns:IServiceClinique_UpdateMembership_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteMembership">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeleteMembership" message="tns:IServiceClinique_DeleteMembership_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeleteMembershipResponse" message="tns:IServiceClinique_DeleteMembership_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllExclusionDay">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/GetAllExclusionDay" message="tns:IServiceClinique_GetAllExclusionDay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/GetAllExclusionDayResponse" message="tns:IServiceClinique_GetAllExclusionDay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertExclusionDay">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/InsertExclusionDay" message="tns:IServiceClinique_InsertExclusionDay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/InsertExclusionDayResponse" message="tns:IServiceClinique_InsertExclusionDay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateExclusionDay">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/UpdateExclusionDay" message="tns:IServiceClinique_UpdateExclusionDay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UpdateExclusionDayResponse" message="tns:IServiceClinique_UpdateExclusionDay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteExclusionDay">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceClinique/DeleteExclusionDay" message="tns:IServiceClinique_DeleteExclusionDay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/DeleteExclusionDayResponse" message="tns:IServiceClinique_DeleteExclusionDay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshArretDetravails">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshArretDetravails" message="tns:IServiceClinique_RefreshArretDetravails_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshClients">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshClients" message="tns:IServiceClinique_RefreshClients_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshMembership">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshMembership" message="tns:IServiceClinique_RefreshMembership_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshMedecin">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshMedecin" message="tns:IServiceClinique_RefreshMedecin_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshPatient">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshPatient" message="tns:IServiceClinique_RefreshPatient_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshSpécialité">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshSpécialité" message="tns:IServiceClinique_RefreshSpécialité_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshRendezVous">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshRendezVous" message="tns:IServiceClinique_RefreshRendezVous_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshDepense">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshDepense" message="tns:IServiceClinique_RefreshDepense_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshMotifDepense">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshMotifDepense" message="tns:IServiceClinique_RefreshMotifDepense_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshMotifVisite">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshMotifVisite" message="tns:IServiceClinique_RefreshMotifVisite_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshTypeCas">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshTypeCas" message="tns:IServiceClinique_RefreshTypeCas_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshCasTraitement">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshCasTraitement" message="tns:IServiceClinique_RefreshCasTraitement_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshVisite">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshVisite" message="tns:IServiceClinique_RefreshVisite_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshConstante">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshConstante" message="tns:IServiceClinique_RefreshConstante_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshDicom">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshDicom" message="tns:IServiceClinique_RefreshDicom_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshParametre">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshParametre" message="tns:IServiceClinique_RefreshParametre_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshSalleDattente">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshSalleDattente" message="tns:IServiceClinique_RefreshSalleDattente_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshDictionnaire">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshDictionnaire" message="tns:IServiceClinique_RefreshDictionnaire_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshEcranAcceuil">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshEcranAcceuil" message="tns:IServiceClinique_RefreshEcranAcceuil_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshDepeiment">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshDepeiment" message="tns:IServiceClinique_RefreshDepeiment_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshDepeimentMultiple">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshDepeimentMultiple" message="tns:IServiceClinique_RefreshDepeimentMultiple_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshDci">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshDci" message="tns:IServiceClinique_RefreshDci_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshCatalogue">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshCatalogue" message="tns:IServiceClinique_RefreshCatalogue_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshActe">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshActe" message="tns:IServiceClinique_RefreshActe_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshProduitOrdonnance">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshProduitOrdonnance" message="tns:IServiceClinique_RefreshProduitOrdonnance_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshOrdonnancePatient">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshOrdonnancePatient" message="tns:IServiceClinique_RefreshOrdonnancePatient_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshEnteteOrdonnace">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshEnteteOrdonnace" message="tns:IServiceClinique_RefreshEnteteOrdonnace_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RefreshDiagnostic">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/RefreshDiagnostic" message="tns:IServiceClinique_RefreshDiagnostic_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Receive">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/Receive" message="tns:IServiceClinique_Receive_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ReceiveWhisper">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/ReceiveWhisper" message="tns:IServiceClinique_ReceiveWhisper_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="IsWritingCallback">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/IsWritingCallback" message="tns:IServiceClinique_IsWritingCallback_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ReceiverFile">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/ReceiverFile" message="tns:IServiceClinique_ReceiverFile_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UserJoin">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UserJoin" message="tns:IServiceClinique_UserJoin_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UserLeave">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceClinique/UserLeave" message="tns:IServiceClinique_UserLeave_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IServiceClinique" type="tns:IServiceClinique">
+    <wsp:PolicyReference URI="#NetTcpBinding_IServiceClinique_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetAllRendezVousParMedecin">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllRendezVousParMedecin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRendezVousParPatient">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllRendezVousParPatient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRendezVous">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllRendezVous" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRendezVousAll">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllRendezVousAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertRendez">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertRendez" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRendezVous">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateRendezVous" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRendezVous">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeleteRendezVous" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPatient">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllPatient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPatientPAR">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllPatientPAR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPatienteEXISTE">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllPatienteEXISTE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPatientNomPrenom">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllPatientNomPrenom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPatientBYID">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllPatientBYID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPatient">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertPatient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatient">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdatePatient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePatient">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeletePatient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Connect">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/Connect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllClient">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllClientDict">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllClientDict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReConnect">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/ReConnect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Say">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/Say" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Whisper">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/Whisper" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="IsWriting">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/IsWriting" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="SendFile">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/SendFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Disconnect">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/Disconnect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="VerificationCle1">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/VerificationCle1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestConnect">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/TestConnect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterDiagnosticRefresh">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/AjouterDiagnosticRefresh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterArrettravailRefresh">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/AjouterArrettravailRefresh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterDictionnaireRefresh">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/AjouterDictionnaireRefresh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterProduitOrdonnaceRefresh">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/AjouterProduitOrdonnaceRefresh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterDepenseRefresh">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/AjouterDepenseRefresh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterActeCatalogueRefresh">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/AjouterActeCatalogueRefresh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterSoldeVisiteRefresh">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/AjouterSoldeVisiteRefresh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterPatientRefresh">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/AjouterPatientRefresh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterEnteteOrdonnaceOrdonnancePatientRefresh">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/AjouterEnteteOrdonnaceOrdonnancePatientRefresh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterDciiRefresh">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/AjouterDciiRefresh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterCasTraitementRefresh">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/AjouterCasTraitementRefresh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterTransactionPaiementRefresh">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/AjouterTransactionPaiementRefresh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterSalleAtentefRefresh">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/AjouterSalleAtentefRefresh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterRendezVOUSfRefresh">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/AjouterRendezVOUSfRefresh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SalleAttenteDemandeChezLeMedecin">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/SalleAttenteDemandeChezLeMedecin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterDicomImageRefresh">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/AjouterDicomImageRefresh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDocument">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UploadDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadDocument">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DownloadDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadDocumentIsHere">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DownloadDocumentIsHere" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllParamétre">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllParamétre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateParamétre">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateParamétre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDictionnaire">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllDictionnaire" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDictionnaire">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertDictionnaire" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDictionnaire">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateDictionnaire" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDictionnaire">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeleteDictionnaire" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAutreBilan">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllAutreBilan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertAutreBilan">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertAutreBilan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAutreBilan">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateAutreBilan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAutreBilan">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeleteAutreBilan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDiagnostic">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllDiagnostic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDiagnostic">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertDiagnostic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDiagnostic">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateDiagnostic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDiagnostic">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeleteDiagnostic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEnteteOrdonnace">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllEnteteOrdonnace" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEnteteOrdonnace">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertEnteteOrdonnace" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEnteteOrdonnace">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateEnteteOrdonnace" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEnteteOrdonnace">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeleteEnteteOrdonnace" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrdonnancePatient">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllOrdonnancePatient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrdonnancePatient">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertOrdonnancePatient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrdonnancePatient">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateOrdonnancePatient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrdonnancePatient">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeleteOrdonnancePatient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllActe">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllActe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertActe">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertActe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActe">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateActe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteActe">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeleteActe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCatalogue">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllCatalogue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCatalogue">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertCatalogue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCatalogue">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateCatalogue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCatalogue">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeleteCatalogue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDepeiementMultiple">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllDepeiementMultiple" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDepeiementMultiple">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertDepeiementMultiple" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDepeiementMultiple">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateDepeiementMultiple" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDepeiementMultiple">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeleteDepeiementMultiple" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDepeiment">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllDepeiment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDepeiment">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertDepeiment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDepeiment">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateDepeiment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDepeiment">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeleteDepeiment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDicomFichier">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllDicomFichier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDicomFichier">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertDicomFichier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDicomFichier">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateDicomFichier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDicomFichier">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeleteDicomFichier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllArretDetravail">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllArretDetravail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertArretDetravail">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertArretDetravail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteArretDetravail">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeleteArretDetravail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProduitOrdonnance">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllProduitOrdonnance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertProduitOrdonnance">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertProduitOrdonnance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduitOrdonnance">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateProduitOrdonnance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduitOrdonnance">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeleteProduitOrdonnance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDci">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllDci" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDci">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertDci" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDci">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateDci" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletDci">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeletDci" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDepense">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllDepense" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDepense">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertDepense" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDepense">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateDepense" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDepense">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeleteDepense" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMotifDepense">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllMotifDepense" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMotifDepense">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertMotifDepense" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMotifDepense">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateMotifDepense" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMotifDepense">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeleteMotifDepense" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSalleDattente">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllSalleDattente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSalleDattenteALL">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllSalleDattenteALL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSalleDatente">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertSalleDatente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSalleDattente">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateSalleDattente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSalleDattente">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeleteSalleDattente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTypeCas">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllTypeCas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTypeCas">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertTypeCas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTypeCas">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateTypeCas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTypeCas">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeleteTypeCas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllConstantes">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllConstantes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllConstantesByPatient">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllConstantesByPatient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertConstante">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertConstante" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateConstante">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateConstante" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteConstante">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeleteConstante" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTraitement">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllTraitement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTypeTraitement">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertTypeTraitement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTypeTraitement">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateTypeTraitement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTypeTraitement">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeleteTypeTraitement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllVisite">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllVisite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllVisiteAll">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllVisiteAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllVisiteByVisite">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllVisiteByVisite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllVisiteByClepatient">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllVisiteByClepatient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllVisiteByVisiteMedecin">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllVisiteByVisiteMedecin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertVisite">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertVisite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVisite">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateVisite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVisite">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeleteVisite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMedecin">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllMedecin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMedecin">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertMedecin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMedecin">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateMedecin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMedecin">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeleteMedecin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSpécialité">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllSpécialité" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSpécialité">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertSpécialité" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSpécialité">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateSpécialité" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSpécialité">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeleteSpécialité" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMotifVisite">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllMotifVisite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMotifVisite">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertMotifVisite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMotifVisite">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateMotifVisite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMotifVisite">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeleteMotifVisite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMembership">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllMembership" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMembership">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertMembership" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMembership">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateMembership" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMembership">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeleteMembership" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllExclusionDay">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/GetAllExclusionDay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertExclusionDay">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/InsertExclusionDay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExclusionDay">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UpdateExclusionDay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteExclusionDay">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/DeleteExclusionDay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshArretDetravails">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshArretDetravails" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshClients">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshClients" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshMembership">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshMembership" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshMedecin">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshMedecin" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshPatient">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshPatient" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshSpécialité">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshSpécialité" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshRendezVous">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshRendezVous" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshDepense">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshDepense" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshMotifDepense">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshMotifDepense" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshMotifVisite">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshMotifVisite" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshTypeCas">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshTypeCas" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshCasTraitement">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshCasTraitement" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshVisite">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshVisite" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshConstante">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshConstante" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshDicom">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshDicom" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshParametre">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshParametre" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshSalleDattente">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshSalleDattente" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshDictionnaire">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshDictionnaire" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshEcranAcceuil">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshEcranAcceuil" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshDepeiment">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshDepeiment" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshDepeimentMultiple">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshDepeimentMultiple" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshDci">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshDci" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshCatalogue">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshCatalogue" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshActe">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshActe" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshProduitOrdonnance">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshProduitOrdonnance" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshOrdonnancePatient">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshOrdonnancePatient" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshEnteteOrdonnace">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshEnteteOrdonnace" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshDiagnostic">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/RefreshDiagnostic" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Receive">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/Receive" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveWhisper">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/ReceiveWhisper" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsWritingCallback">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/IsWritingCallback" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiverFile">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/ReceiverFile" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserJoin">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UserJoin" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLeave">
+      <soap12:operation soapAction="http://tempuri.org/IServiceClinique/UserLeave" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceClinique">
+    <wsdl:port name="NetTcpBinding_IServiceClinique" binding="tns:NetTcpBinding_IServiceClinique">
+      <soap12:address location="net.tcp://localhost:7987/WpfHost/tcp" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:7987/WpfHost/tcp</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

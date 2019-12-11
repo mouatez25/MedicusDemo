@@ -1,0 +1,126 @@
+﻿<dx:DXWindow xmlns:dxca="http://schemas.devexpress.com/winfx/2008/xaml/carousel"  xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"  xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"  xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"  xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"  xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" 
+    x:Class="Medicus.DXWindowMain"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+      dx:ThemeManager.ThemeName="Office2010Black"
+    Title="Medicus LOGICIEL GESTION DE CABINET MEDICAL" Height="700" Width="900" ResizeMode="CanResize"  Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" ShowIcon="True" ShowTitle="True"  WindowStyle="ThreeDBorderWindow"  Icon="Dent6.ico" WindowStartupLocation="CenterScreen"  BorderThickness="0"  BorderBrush="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" ShowInTaskbar="True" Closing="DXWindow_Closing"  >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition  />
+
+        </Grid.RowDefinitions>
+        <UserControl x:Name="BACK" Background="LightGray" Visibility="Collapsed" Opacity="0.6" Grid.RowSpan="2" Panel.ZIndex="99"/>
+        <dx:WaitIndicator x:Name="WaitIndicatorS" DeferedVisibility="False" Content="Chargement..." Grid.RowSpan="2" Panel.ZIndex="99" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <dx:WaitIndicator.ContentTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="veuillez patienter" FontSize="36" FontFamily="Tahoma"/>
+                        <TextBlock Text="{Binding}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </dx:WaitIndicator.ContentTemplate>
+        </dx:WaitIndicator>
+        <DockPanel Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
+
+            <Menu x:Name="MenuPrincipale" IsMainMenu="True" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Right" FontFamily="Tahoma" FontSize="16" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
+
+
+
+
+
+                <MenuItem Header="_Rendez vous" FontFamily="Tahoma" FontSize="14">
+                    <MenuItem.Background>
+                        <ImageBrush/>
+                    </MenuItem.Background>
+                    <MenuItem Header="_Prendre rendez vous" FontFamily="Tahoma" Click="MenuItem_Click_1" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}">
+                        <MenuItem.Icon>
+                            <Image Source="Images/1459362267_stack_of_photos.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="_liste des rendez vous" FontFamily="Tahoma" Click="MenuItem_Click_7" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}">
+                        <MenuItem.Icon>
+                            <Image Source="Images/1459361047_calendar.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                    <Separator Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" />
+                    <MenuItem Header="_Nouvelle Fiche Patient" FontFamily="Tahoma" Click="MenuItem_Click_8" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}">
+                        <MenuItem.Icon>
+                            <Image Width="25" Height="25" Source="Images/FICHEPATIENT.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="_Liste des patients" FontFamily="Tahoma" Click="MenuItem_Click_9" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}">
+                        <MenuItem.Icon>
+                            <Image Source="Images/1459362003_conference.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+
+                </MenuItem>
+
+
+
+
+
+
+
+
+
+                <MenuItem Header="_Rapport" FontFamily="Tahoma" FontSize="14">
+                    <MenuItem.Background>
+                        <ImageBrush/>
+                    </MenuItem.Background>
+                    <MenuItem x:Name="RéglementPatient" Header="Règlements Patients"  FontFamily="Tahoma" Click="RéglementPatient_Click" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"  />
+                    <Separator Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" />
+                    <MenuItem x:Name="Rapport" Header="Certificat/Attestation"  FontFamily="Tahoma" Click="Rapport_Click" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" >
+                        <MenuItem.Icon>
+                            <Image Height="25" Width="25" Source="Images/notes_music_document_write-MAX.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                    <Separator Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" />
+                    <MenuItem x:Name="Rapport3" Header="Editeur de text"  FontFamily="Tahoma" Click="Rapport3_Click" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" >
+
+                        <MenuItem.Icon>
+                            <Image Height="25" Width="25" Source="Images/Word_2013_file_icon.svg_.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="Rapport4" Header="Feuille de calcul"  FontFamily="Tahoma" Click="Rapport4_Click" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"  >
+
+                        <MenuItem.Icon>
+                            <Image Height="25" Width="25"  Source="Images/Excel-Icon.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                   
+                    <Separator Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" />
+                    <MenuItem x:Name="Tableaudebord" Header="Tableau de bord"  FontFamily="Tahoma" Click="Tableaudebord_Click" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" >
+                        <MenuItem.Icon>
+                            <Image Height="25" Width="25" Source="Images/grafico.gif"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+
+               
+
+            </Menu>
+
+            <DockPanel HorizontalAlignment="Right" Margin="0,0,50,0">
+                <Label Content="Bonjour :" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,15,0" FontFamily="Tahoma" FontSize="18" />
+                <Label x:Name="SESSSIONNAME" Content="Dr kitouni" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="Tahoma" FontSize="18" Foreground="{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}" FontWeight="Bold" />
+            </DockPanel>
+        </DockPanel>
+        <ListBox   x:Name="chatListBoxNames" Visibility="Collapsed"  HorizontalAlignment="Right" Margin="0,62,10,84" Width="139"   BorderThickness="1" BorderBrush="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" FontFamily="Tahoma" FontWeight="Bold" FontSize="14" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" SelectionChanged="chatListBoxNames_SelectionChanged"  />
+
+        <Grid x:Name="gridhome" ShowGridLines="False" Visibility="Visible" Grid.Row="1">
+
+
+            <dxwui:NavigationFrame x:Name="FrameInterieur" 
+ 
+  AnimationType="SlideHorizontal" Grid.Column="0" Grid.RowSpan="1" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" />
+        </Grid>
+    </Grid>
+
+</dx:DXWindow>

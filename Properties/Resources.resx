@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Logiciel" xml:space="preserve">
+    <value>Medicus</value>
+  </data>
+  <data name="SiteWeb" xml:space="preserve">
+    <value>Gestion Cabinet médical</value>
+  </data>
+  <data name="OperationSuccées" xml:space="preserve">
+    <value>opération terminée avec succès</value>
+  </data>
+  <data name="Opérationéchouée" xml:space="preserve">
+    <value>opération a été annulée</value>
+  </data>
+  <data name="OpérationéchouéeTransaction" xml:space="preserve">
+    <value>opération a été annulée , la transaction a échoué</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="soins_dentaires" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\soins-dentaires.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MessageBoxQuestionOperation" xml:space="preserve">
+    <value>Veuillez confirmez cette opération</value>
+  </data>
+  <data name="MessageBoxEcriutreautomatique" xml:space="preserve">
+    <value>cette écriture est générer automatiquement! vous ne pouvez pas la supprimer dans ce module</value>
+  </data>
+  <data name="MessageBoxPrivilége" xml:space="preserve">
+    <value>Vous n'avez pas le droit d'accéder a ce module</value>
+  </data>
+  <data name="facebookme_lZ4iKc6J" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\facebookme_lZ4iKc6J.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ArretDeTravail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\EtatEtRapport\ArretDeTravail.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BonExamenRadio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Patient\BonExamenRadio.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CertificationMedical" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\EtatEtRapport\CertificationMedical.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ConsultationClinique" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Patient\ConsultationClinique.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DiagnosticDiab" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Patient\DiagnosticDiab.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="IMC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\DocumentImportant\IMC.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ListeDattente" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\FileDattente\ListeDattente.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ListeRendezVous" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\RendezVous\ListeRendezVous.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MouvementCaisse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Caisse\MouvementCaisse.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RecuDePaiement" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Caisse\RecuDePaiement.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ReportBonExamen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Patient\ReportBonExamen.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ReportCaisse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Caisse\ReportCaisse.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ReportConstante" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Patient\ReportConstante.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ReportCredti" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\EtatEtRapport\ReportCredti.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ReportListeMotif" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Administrateur\ReportListeMotif.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ReportListeMotifDepense" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Administrateur\ReportListeMotifDepense.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ReportListeSpecialité" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Administrateur\ReportListeSpecialité.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ReportListeTypeCas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Administrateur\ReportListeTypeCas.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ReportMedecin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Administrateur\ReportMedecin.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ReportMembership" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Administrateur\ReportMembership.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ReportOneConstante" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Patient\ReportOneConstante.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ReportOneMedecin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Administrateur\ReportOneMedecin.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ReportOneMembership" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Administrateur\ReportOneMembership.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ReportOnePatient" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Patient\ReportOnePatient.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ReportOneVisite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Patient\ReportOneVisite.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ReportPatients" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Patient\ReportPatients.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ReportRendezVous" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\RendezVous\ReportRendezVous.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ReportTableauDeBord" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\EtatEtRapport\ReportTableauDeBord.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ReportVisiteDetailPatient" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\EtatEtRapport\ReportVisiteDetailPatient.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="VisiteGeneral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\EtatEtRapport\VisiteGeneral.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AutreBilan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Patient\AutreBilan.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Ordonnance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Patient\Ordonnance.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="OrdonnanceA4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Patient\OrdonnanceA4.rdlc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

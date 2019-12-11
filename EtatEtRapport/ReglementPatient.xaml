@@ -1,0 +1,526 @@
+﻿<dx:DXWindow xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"  x:Class="Medicus.EtatEtRapport.ReglementPatient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Medicus.EtatEtRapport"
+                  xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+           dx:ThemeManager.ThemeName="Office2010Black"
+                                xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+
+        mc:Ignorable="d"
+        Title="Réglement Patient"  Height="650" Width="1300"    ResizeMode="CanResize"  Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" ShowIcon="True" ShowTitle="True"  WindowStyle="ThreeDBorderWindow"  Icon="/Medicus;component/Dent6.ico" WindowStartupLocation="CenterScreen"  BorderThickness="0"  BorderBrush="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" ShowInTaskbar="True"  >
+    
+        <Grid>
+           
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50px" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="0.25*"  />
+            </Grid.RowDefinitions>
+
+            <DockPanel Margin="15,6,6,4" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                <Label x:Name="jf" Content="Règlements Patients" BorderThickness="1" FontSize="24" FontFamily="Century Schoolbook"  VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}" HorizontalAlignment="Right" FontWeight="Bold" Background="#FFB27300" BorderBrush="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Margin="0,0,20,0" Height="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" />
+ 
+                <DockPanel  Margin="0,0,6,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalAlignment="Left" Grid.ColumnSpan="2" Grid.Column="1" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Height="40">
+                    <Button x:Name="btnFilter" Click="btnFilter_Click" HorizontalAlignment="Right" DockPanel.Dock="Right"  Content="" ToolTip="Filtrer" Width="25" Height="25" BorderBrush="{x:Null}">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Style.BasedOn>
+                                    <Style TargetType="{x:Type Button}">
+                                        <Setter Property="Controls:ControlsHelper.ContentCharacterCasing" Value="Upper"/>
+                                        <Setter Property="Controls:ControlsHelper.CornerRadius" Value="3"/>
+                                        <Setter Property="MinHeight" Value="25"/>
+                                        <Setter Property="FontWeight" Value="Bold"/>
+                                        <Setter Property="FontSize" Value="{DynamicResource UpperCaseContentFontSize}"/>
+                                        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}"/>
+                                        <Setter Property="Background" Value="{DynamicResource GrayBrush10}"/>
+                                        <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrush}"/>
+                                        <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
+                                        <Setter Property="Padding" Value="5,6"/>
+                                        <Setter Property="BorderThickness" Value="1"/>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type Button}">
+                                                    <Grid>
+                                                        <Border x:Name="Background" Background="{TemplateBinding Background}" CornerRadius="{Binding (Controls:ControlsHelper.CornerRadius), Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                        <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{x:Null}" CornerRadius="{Binding (Controls:ControlsHelper.CornerRadius), Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                                        <Border x:Name="DisabledVisualElement" Background="{DynamicResource ControlsDisabledBrush}" CornerRadius="{Binding (Controls:ControlsHelper.CornerRadius), Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" IsHitTestVisible="False" Opacity="0" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                                        <Controls:ContentControlEx x:Name="PART_ContentPresenter" ContentCharacterCasing="{Binding (Controls:ControlsHelper.ContentCharacterCasing), RelativeSource={RelativeSource TemplatedParent}}" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                    </Grid>
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+
+                                                            <Setter Property="Opacity" TargetName="DisabledVisualElement" Value="0.3"/>
+                                                            <Setter Property="Opacity" TargetName="PART_ContentPresenter" Value="0.3"/>
+                                                            <Setter Property="Opacity" TargetName="Background" Value="0.3"/>
+                                                        </Trigger>
+                                                        <Trigger Property="IsPressed" Value="True">
+                                                            <Setter Property="Opacity" TargetName="DisabledVisualElement" Value="0.3"/>
+                                                            <Setter Property="Opacity" TargetName="PART_ContentPresenter" Value="0.3"/>
+                                                            <Setter Property="Opacity" TargetName="Background" Value="0.3"/>
+                                                        </Trigger>
+                                                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                                                            <Setter Property="Opacity" TargetName="DisabledVisualElement" Value="0.3"/>
+                                                            <Setter Property="Opacity" TargetName="PART_ContentPresenter" Value="0.3"/>
+                                                            <Setter Property="Opacity" TargetName="Background" Value="0.3"/>
+                                                        </Trigger>
+                                                        <Trigger Property="IsEnabled" Value="False">
+                                                            <Setter Property="Opacity" TargetName="DisabledVisualElement" Value="0.7"/>
+                                                            <Setter Property="Opacity" TargetName="PART_ContentPresenter" Value="0.3"/>
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </Style.BasedOn>
+                            </Style>
+                        </Button.Style>
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Medicus;component/Images/acept-verifier-corriger-vert-ok-oui-icone-9668-128.png"/>
+                        </Button.Background>
+                    </Button>
+
+
+                <dxe:ComboBoxEdit x:Name="MedecinCombo" AutoComplete="True" ImmediatePopup="True" IncrementalFiltering="True" DisplayMember ="NomPrenom"  IsTextEditable="True" MinWidth="100" HorizontalAlignment="Right" FontFamily="Century Schoolbook" FontSize="14" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" FontWeight="Bold" Foreground="Black" BorderBrush="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" MouseRightButtonDown="MedecinCombo_MouseRightButtonDown" Height="26" Margin="5,0,0,0" Width="150" >
+                    <dxe:ComboBoxEdit.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock DataContext="{Binding}">
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{} {0}   {1}">
+                                            <Binding Path="Nom" />
+                                            <Binding Path="Prénom" />
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                            </DataTemplate>
+                        </dxe:ComboBoxEdit.ItemTemplate>
+                    </dxe:ComboBoxEdit>
+
+                <dxe:ComboBoxEdit x:Name="PatientCombo"    DockPanel.Dock="Right" MinWidth="100" HorizontalAlignment="Right" FontFamily="Century Schoolbook" FontSize="14"  Width="150" Height="26"  FontWeight="Normal" AutoComplete="True"
+                          ImmediatePopup="True" IncrementalFiltering="True"
+                          IsTextEditable="True"     DisplayMember="NomPrenom"  VerticalAlignment="Center"     Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}">
+                    <dxe:ComboBoxEdit.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock DataContext="{Binding}">
+                                <TextBlock.Text>
+                                    <MultiBinding StringFormat="{} {0}   {1}">
+                                        <Binding Path="Nom" />
+                                        <Binding Path="Prénom" />
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </DataTemplate>
+                    </dxe:ComboBoxEdit.ItemTemplate>
+                </dxe:ComboBoxEdit>
+               
+                <DatePicker x:Name="DateVisiteFin" VerticalAlignment="Center" FontSize="14" FontFamily="Century Schoolbook" FontWeight="Bold" Foreground="#FFB27300" Margin="0,0,10,0" HorizontalAlignment="Right" DockPanel.Dock="Right" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" />
+                    <TextBlock  Text="au:" VerticalAlignment="Center" FontWeight="Bold" FontSize="14" Margin="0,0,10,0" FontFamily="Century Schoolbook" DockPanel.Dock="Right" HorizontalAlignment="Right" Foreground="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}" />
+                    <DatePicker x:Name="DateVisiteDébut" VerticalAlignment="Center" FontSize="14" FontFamily="Century Schoolbook" FontWeight="Bold" Foreground="#FFB27300" Margin="0,0,10,0" HorizontalAlignment="Right" DockPanel.Dock="Right" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" />
+                    <TextBlock  Text="Du:" VerticalAlignment="Center" FontWeight="Bold" FontSize="14" Margin="10,0" FontFamily="Century Schoolbook" DockPanel.Dock="Right" HorizontalAlignment="Right" Foreground="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}" />
+                    <RadioButton x:Name="chVisiteRegler"  Content="Réglé" VerticalAlignment="Top" HorizontalAlignment="Left" GroupName="RegleOuNonRegle" DockPanel.Dock="Top" FontSize="10" FontFamily="Century Schoolbook" Foreground="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}"/>
+                    <RadioButton x:Name="chVisitenONRegler" IsChecked="True" Content="Non Réglé" VerticalAlignment="Center" HorizontalAlignment="Left" GroupName="RegleOuNonRegle" DockPanel.Dock="Top" FontSize="10" FontFamily="Century Schoolbook" Foreground="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}"/>
+
+                </DockPanel>
+                <Button x:Name="btnSolde" Margin="20,0,0,0" Content="" HorizontalAlignment="Left" Foreground="Goldenrod" Click="btnSolde_Click" FontFamily="Times New Roman" ToolTip="Nouveau Versement" Width="25" Height="25" >
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Style.BasedOn>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Controls:ControlsHelper.ContentCharacterCasing" Value="Upper"/>
+                                    <Setter Property="Controls:ControlsHelper.CornerRadius" Value="3"/>
+                                    <Setter Property="MinHeight" Value="25"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="FontSize" Value="{DynamicResource UpperCaseContentFontSize}"/>
+                                    <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}"/>
+                                    <Setter Property="Background" Value="{DynamicResource GrayBrush10}"/>
+                                    <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrush}"/>
+                                    <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
+                                    <Setter Property="Padding" Value="5,6"/>
+                                    <Setter Property="BorderThickness" Value="1"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Grid>
+                                                    <Border x:Name="Background" Background="{TemplateBinding Background}" CornerRadius="{Binding (Controls:ControlsHelper.CornerRadius), Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                    <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{x:Null}" CornerRadius="{Binding (Controls:ControlsHelper.CornerRadius), Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                                    <Border x:Name="DisabledVisualElement" Background="{DynamicResource ControlsDisabledBrush}" CornerRadius="{Binding (Controls:ControlsHelper.CornerRadius), Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" IsHitTestVisible="False" Opacity="0" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                                    <Controls:ContentControlEx x:Name="PART_ContentPresenter" ContentCharacterCasing="{Binding (Controls:ControlsHelper.ContentCharacterCasing), RelativeSource={RelativeSource TemplatedParent}}" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                </Grid>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+
+                                                        <Setter Property="Opacity" TargetName="DisabledVisualElement" Value="0.3"/>
+                                                        <Setter Property="Opacity" TargetName="PART_ContentPresenter" Value="0.3"/>
+                                                        <Setter Property="Opacity" TargetName="Background" Value="0.3"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsPressed" Value="True">
+                                                        <Setter Property="Opacity" TargetName="DisabledVisualElement" Value="0.3"/>
+                                                        <Setter Property="Opacity" TargetName="PART_ContentPresenter" Value="0.3"/>
+                                                        <Setter Property="Opacity" TargetName="Background" Value="0.3"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                                                        <Setter Property="Opacity" TargetName="DisabledVisualElement" Value="0.3"/>
+                                                        <Setter Property="Opacity" TargetName="PART_ContentPresenter" Value="0.3"/>
+                                                        <Setter Property="Opacity" TargetName="Background" Value="0.3"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsEnabled" Value="False">
+                                                        <Setter Property="Opacity" TargetName="DisabledVisualElement" Value="0.7"/>
+                                                        <Setter Property="Opacity" TargetName="PART_ContentPresenter" Value="0.3"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Style.BasedOn>
+                        </Style>
+                    </Button.Style>
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Medicus;component/Images/47105.png" Stretch="Uniform"/>
+                    </Button.Background>
+                    <Button.BorderBrush>
+                        <ImageBrush/>
+                    </Button.BorderBrush>
+                </Button>
+                <Button x:Name="btnListeVersement" Margin="20,0,0,0" Content="" HorizontalAlignment="Left" Foreground="Goldenrod" Click="btnListeVersement_Click" FontFamily="Times New Roman" ToolTip="Liste Des Versements" Width="25" Height="25"  >
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Style.BasedOn>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Controls:ControlsHelper.ContentCharacterCasing" Value="Upper"/>
+                                    <Setter Property="Controls:ControlsHelper.CornerRadius" Value="3"/>
+                                    <Setter Property="MinHeight" Value="25"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="FontSize" Value="{DynamicResource UpperCaseContentFontSize}"/>
+                                    <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}"/>
+                                    <Setter Property="Background" Value="{DynamicResource GrayBrush10}"/>
+                                    <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrush}"/>
+                                    <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
+                                    <Setter Property="Padding" Value="5,6"/>
+                                    <Setter Property="BorderThickness" Value="1"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Grid>
+                                                    <Border x:Name="Background" Background="{TemplateBinding Background}" CornerRadius="{Binding (Controls:ControlsHelper.CornerRadius), Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                    <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{x:Null}" CornerRadius="{Binding (Controls:ControlsHelper.CornerRadius), Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                                    <Border x:Name="DisabledVisualElement" Background="{DynamicResource ControlsDisabledBrush}" CornerRadius="{Binding (Controls:ControlsHelper.CornerRadius), Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" IsHitTestVisible="False" Opacity="0" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                                    <Controls:ContentControlEx x:Name="PART_ContentPresenter" ContentCharacterCasing="{Binding (Controls:ControlsHelper.ContentCharacterCasing), RelativeSource={RelativeSource TemplatedParent}}" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                </Grid>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+
+                                                        <Setter Property="Opacity" TargetName="DisabledVisualElement" Value="0.3"/>
+                                                        <Setter Property="Opacity" TargetName="PART_ContentPresenter" Value="0.3"/>
+                                                        <Setter Property="Opacity" TargetName="Background" Value="0.3"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsPressed" Value="True">
+                                                        <Setter Property="Opacity" TargetName="DisabledVisualElement" Value="0.3"/>
+                                                        <Setter Property="Opacity" TargetName="PART_ContentPresenter" Value="0.3"/>
+                                                        <Setter Property="Opacity" TargetName="Background" Value="0.3"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                                                        <Setter Property="Opacity" TargetName="DisabledVisualElement" Value="0.3"/>
+                                                        <Setter Property="Opacity" TargetName="PART_ContentPresenter" Value="0.3"/>
+                                                        <Setter Property="Opacity" TargetName="Background" Value="0.3"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsEnabled" Value="False">
+                                                        <Setter Property="Opacity" TargetName="DisabledVisualElement" Value="0.7"/>
+                                                        <Setter Property="Opacity" TargetName="PART_ContentPresenter" Value="0.3"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Style.BasedOn>
+                        </Style>
+                    </Button.Style>
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Medicus;component/Images/Listepatient.png" Stretch="Uniform"/>
+                    </Button.Background>
+                    <Button.BorderBrush>
+                        <ImageBrush/>
+                    </Button.BorderBrush>
+                </Button>
+                <Button x:Name="btnImprimer" Margin="20,0,0,0" Content="" HorizontalAlignment="Left" Foreground="Goldenrod" Click="btnImprimer_Click" FontFamily="Times New Roman" ToolTip="Imprimer" Width="25" Height="25">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Style.BasedOn>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Controls:ControlsHelper.ContentCharacterCasing" Value="Upper"/>
+                                    <Setter Property="Controls:ControlsHelper.CornerRadius" Value="3"/>
+                                    <Setter Property="MinHeight" Value="25"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="FontSize" Value="{DynamicResource UpperCaseContentFontSize}"/>
+                                    <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}"/>
+                                    <Setter Property="Background" Value="{DynamicResource GrayBrush10}"/>
+                                    <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrush}"/>
+                                    <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
+                                    <Setter Property="Padding" Value="5,6"/>
+                                    <Setter Property="BorderThickness" Value="1"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Grid>
+                                                    <Border x:Name="Background" Background="{TemplateBinding Background}" CornerRadius="{Binding (Controls:ControlsHelper.CornerRadius), Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                    <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{x:Null}" CornerRadius="{Binding (Controls:ControlsHelper.CornerRadius), Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                                    <Border x:Name="DisabledVisualElement" Background="{DynamicResource ControlsDisabledBrush}" CornerRadius="{Binding (Controls:ControlsHelper.CornerRadius), Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" IsHitTestVisible="False" Opacity="0" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                                    <Controls:ContentControlEx x:Name="PART_ContentPresenter" ContentCharacterCasing="{Binding (Controls:ControlsHelper.ContentCharacterCasing), RelativeSource={RelativeSource TemplatedParent}}" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                </Grid>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+
+                                                        <Setter Property="Opacity" TargetName="DisabledVisualElement" Value="0.3"/>
+                                                        <Setter Property="Opacity" TargetName="PART_ContentPresenter" Value="0.3"/>
+                                                        <Setter Property="Opacity" TargetName="Background" Value="0.3"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsPressed" Value="True">
+                                                        <Setter Property="Opacity" TargetName="DisabledVisualElement" Value="0.3"/>
+                                                        <Setter Property="Opacity" TargetName="PART_ContentPresenter" Value="0.3"/>
+                                                        <Setter Property="Opacity" TargetName="Background" Value="0.3"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                                                        <Setter Property="Opacity" TargetName="DisabledVisualElement" Value="0.3"/>
+                                                        <Setter Property="Opacity" TargetName="PART_ContentPresenter" Value="0.3"/>
+                                                        <Setter Property="Opacity" TargetName="Background" Value="0.3"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsEnabled" Value="False">
+                                                        <Setter Property="Opacity" TargetName="DisabledVisualElement" Value="0.7"/>
+                                                        <Setter Property="Opacity" TargetName="PART_ContentPresenter" Value="0.3"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Style.BasedOn>
+                        </Style>
+                    </Button.Style>
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Medicus;component/Administrateur/Images/1456624510_printer.png"/>
+                    </Button.Background>
+                    <Button.BorderBrush>
+                        <ImageBrush/>
+                    </Button.BorderBrush>
+                </Button>
+
+
+
+            </DockPanel>
+        <DataGrid x:Name="PatientDataGrid" Grid.Row="1" AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="0" IsReadOnly="True" IsTextSearchCaseSensitive="True" Grid.ColumnSpan="2" FontFamily="Century Schoolbook" GridLinesVisibility="None" RowBackground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" AlternatingRowBackground="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" MouseRightButtonDown="btndeFilter_Click">
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Controls:ControlsHelper.ContentCharacterCasing" Value="Normal"/>
+                        <Setter Property="FontWeight" Value="SemiBold"/>
+                        <Setter Property="SnapsToDevicePixels" Value="True"/>
+                        <Setter Property="MinWidth" Value="0"/>
+                        <Setter Property="MinHeight" Value="25"/>
+                        <Setter Property="Foreground" Value="{DynamicResource BlackBrush}"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                        <Setter Property="Padding" Value="10,4,4,7"/>
+                        <Setter Property="Margin" Value="0"/>
+                        <Setter Property="BorderThickness" Value="0,0,0,3"/>
+                        <Setter Property="BorderBrush" Value="{DynamicResource GrayBrush5}"/>
+                        <Setter Property="Background" Value="{DynamicResource GrayBrush8}"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Border x:Name="BackgroundBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Grid.ColumnSpan="2"/>
+                                        <Controls:ContentControlEx x:Name="HeaderContent" ContentCharacterCasing="{Binding (Controls:ControlsHelper.ContentCharacterCasing), RelativeSource={RelativeSource TemplatedParent}}" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                        <Path x:Name="SortArrow" Grid.Column="1" Fill="{DynamicResource GrayBrush2}" Height="10" Margin="0,0,8,2" RenderTransformOrigin="0.5,0.5" Stretch="Fill" Visibility="Collapsed" VerticalAlignment="Center" Width="8"/>
+                                        <Thumb x:Name="PART_LeftHeaderGripper" Background="Transparent" HorizontalAlignment="Left" HorizontalContentAlignment="Left">
+                                            <Thumb.Style>
+                                                <Style TargetType="{x:Type Thumb}">
+                                                    <Setter Property="Width" Value="8"/>
+                                                    <Setter Property="Background" Value="{DynamicResource GrayBrush5}"/>
+                                                    <Setter Property="Cursor" Value="SizeWE"/>
+                                                    <Setter Property="Template">
+                                                        <Setter.Value>
+                                                            <ControlTemplate TargetType="{x:Type Thumb}">
+                                                                <Border Background="Transparent" Padding="{TemplateBinding Padding}">
+                                                                    <Rectangle Fill="{TemplateBinding Background}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Width="1"/>
+                                                                </Border>
+                                                            </ControlTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Style>
+                                            </Thumb.Style>
+                                        </Thumb>
+                                        <Thumb x:Name="PART_RightHeaderGripper" Grid.Column="1" HorizontalAlignment="Right" HorizontalContentAlignment="Right">
+                                            <Thumb.Style>
+                                                <Style TargetType="{x:Type Thumb}">
+                                                    <Setter Property="Width" Value="8"/>
+                                                    <Setter Property="Background" Value="{DynamicResource GrayBrush5}"/>
+                                                    <Setter Property="Cursor" Value="SizeWE"/>
+                                                    <Setter Property="Template">
+                                                        <Setter.Value>
+                                                            <ControlTemplate TargetType="{x:Type Thumb}">
+                                                                <Border Background="Transparent" Padding="{TemplateBinding Padding}">
+                                                                    <Rectangle Fill="{TemplateBinding Background}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Width="1"/>
+                                                                </Border>
+                                                            </ControlTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Style>
+                                            </Thumb.Style>
+                                        </Thumb>
+                                    </Grid>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="SortDirection" Value="{x:Null}">
+                                            <Setter Property="Background" TargetName="BackgroundBorder" Value="{DynamicResource WhiteBrush}"/>
+                                        </Trigger>
+                                        <MultiTrigger>
+                                            <MultiTrigger.Conditions>
+                                                <Condition Property="IsMouseOver" Value="True"/>
+                                                <Condition Property="SortDirection" Value="{x:Null}"/>
+                                            </MultiTrigger.Conditions>
+                                            <Setter Property="Background" TargetName="BackgroundBorder" Value="{DynamicResource GrayBrush8}"/>
+                                        </MultiTrigger>
+                                        <Trigger Property="SortDirection" Value="Ascending">
+                                            <Setter Property="Visibility" TargetName="SortArrow" Value="Visible"/>
+                                            <Setter Property="Data" TargetName="SortArrow" Value="F1M34,57L42,57 42,32.25 52,42.25 52,31.75 38,17.75 24,31.75 24,42.25 34,32.25 34,57z"/>
+                                        </Trigger>
+                                        <Trigger Property="SortDirection" Value="Descending">
+                                            <Setter Property="Visibility" TargetName="SortArrow" Value="Visible"/>
+                                            <Setter Property="Data" TargetName="SortArrow" Value="F1M42,19.0002L34,19.0002 34,43.7502 24,33.7502 24,44.2502 38,58.2502 52,44.2502 52,33.7502 42,43.7502 42,19.0002z"/>
+                                            <Setter Property="Margin" TargetName="SortArrow" Value="0,0,8,0"/>
+                                        </Trigger>
+                                        <Trigger Property="DisplayIndex" Value="0">
+                                            <Setter Property="Visibility" TargetName="PART_LeftHeaderGripper" Value="Collapsed"/>
+                                        </Trigger>
+                                        <Trigger Property="IsEnabled" Value="False">
+                                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell">
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter   Property="BorderThickness" Value="0,3,0,3"/>
+
+                            <Setter Property="BorderBrush" Value="#CC119EDA"></Setter>
+                            <Setter Property="FontWeight" Value="Bold"></Setter>
+                            <Setter Property="FontSize" Value="20"></Setter>
+                            <Setter Property="Background" Value="#CC119EDA" />
+                            <Setter Property="Foreground" Value="White"></Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.CellStyle>
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn  Width="200" Header="Medecin">
+
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock FontWeight="Bold" FontFamily="Century Schoolbook">
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0}   {1}">
+
+                                            <Binding Path="VisiteParNom" />
+                                            <Binding Path="VisiteParPrénom" />
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn  Width="200" Header="Patient">
+
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock FontWeight="Bold" FontFamily="Century Schoolbook">
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0}   {1}">
+
+                                            <Binding Path="NomPatient" />
+                                            <Binding Path="PrénomPatient" />
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn  Width="200" Header="Viste">
+
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock FontWeight="Bold" FontFamily="Century Schoolbook">
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat=" {0} {1}">
+                                            <Binding Path="CasTraite" />
+                                            <Binding Path="Motif" />
+                                         
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Date de visite"
+					Binding="{Binding Date,StringFormat={}\{0:dd/MM/yyyy\}}" Width="Auto" CanUserSort="True" FontFamily="Century Schoolbook" IsReadOnly="True" MinWidth="50" FontSize="12" />
+
+                    <DataGridTextColumn Header="Montant"
+					Binding="{Binding Montant}" Width="Auto" CanUserSort="True" FontFamily="Century Schoolbook" IsReadOnly="True" MinWidth="50" FontSize="12" />
+                    <DataGridTextColumn Header="Versement"
+					Binding="{Binding Versement}" Width="Auto" CanUserSort="True" FontFamily="Century Schoolbook" IsReadOnly="True" MinWidth="50" FontSize="12" />
+                    <DataGridTextColumn Header="Reste"
+					Binding="{Binding Reste}" Width="Auto" CanUserSort="True" FontFamily="Century Schoolbook" IsReadOnly="True" MinWidth="50" FontSize="12" />
+                    <DataGridTextColumn Header="CodePatient"
+					Binding="{Binding CodePatient}" Width="Auto" CanUserSort="True" FontFamily="Century Schoolbook" IsReadOnly="True" MinWidth="50" FontSize="12" />
+                    <DataGridTextColumn Header="CodeMedecin"
+					Binding="{Binding CodeMedecin}" Width="Auto" CanUserSort="True" FontFamily="Century Schoolbook" IsReadOnly="True" MinWidth="50" FontSize="12" />
+                    <DataGridTextColumn Header="Soldé"
+					Binding="{Binding Soldé}" Width="Auto" CanUserSort="True" FontFamily="Century Schoolbook" IsReadOnly="True" MinWidth="50" FontSize="12" />
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+            <DockPanel x:Name="Footer" Grid.Row="2" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
+                <Grid>
+                    <Grid.RowDefinitions>
+
+                        <RowDefinition Height="1*" />
+
+                    </Grid.RowDefinitions>
+                    <Label Content="Versements : " VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,283,0" FontSize="14" FontFamily="Century Schoolbook" FontWeight="Bold" Foreground="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}" />
+                    <TextBox x:Name="TxtVersement" IsReadOnly="True" IsEnabled="False" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" Margin="0,0,183,0" DockPanel.Dock="Right" IsReadOnlyCaretVisible="True" IsInactiveSelectionHighlightEnabled="True" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Foreground="#FFB27300" BorderThickness="3" FontFamily="Times New Roman" FontSize="14" BorderBrush="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" />
+                    <Label Content="Total Factures : " VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,477,0" FontFamily="Century Schoolbook" FontWeight="Bold" FontSize="14" Foreground="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}" />
+                    <TextBox x:Name="txtAchat" IsReadOnly="True" IsEnabled="False"  HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" DockPanel.Dock="Right" IsReadOnlyCaretVisible="True" IsInactiveSelectionHighlightEnabled="True" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Foreground="#FFB27300" BorderThickness="3" Margin="0,0,377,0" FontFamily="Times New Roman" FontSize="14" BorderBrush="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" />
+
+                    <TextBox x:Name="txtFournisseur" IsEnabled="False"  IsReadOnly="True" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" DockPanel.Dock="Right" IsReadOnlyCaretVisible="True" IsInactiveSelectionHighlightEnabled="True" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Foreground="#FFB27300" BorderThickness="3" FontSize="16" FontFamily="Times New Roman" FontWeight="Bold" BorderBrush="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" />
+                    <Label Content="Solde :" HorizontalAlignment="Right" Margin="0,0,120,0" FontFamily="Century Schoolbook" FontWeight="Bold" VerticalAlignment="Center" FontSize="18" Foreground="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}" />
+                    <TextBlock x:Name="label" Text="Motif :" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="20,0,0,0" FontFamily="Century Schoolbook" Foreground="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}" />
+                    <TextBox x:Name="txtRecherche" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="90,0,0,0" Width="200" TextChanged="txtRecherche_TextChanged" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" />
+                    <TextBlock x:Name="labeDl" Text="Patient :" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="300,0,0,0" FontFamily="Century Schoolbook" Foreground="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}" />
+                    <TextBox x:Name="txtRecherchenOM" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="370,0,0,0" Width="200" TextChanged="txtRecherchenOM_TextChanged" BorderBrush="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
+                
+                <dx:SimpleButton x:Name="BTNCALCUL" Click="BTNCALCUL_Click" HorizontalAlignment="Center" Margin="0,0,100,0" VerticalAlignment="Center" Content="Calcul General de crédit" FontFamily="Century Schoolbook" FontSize="14" Background="#FFB27300" BorderBrush="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" />
+                </Grid>
+            </DockPanel>
+
+
+
+
+
+
+        </Grid>
+ 
+    </dx:DXWindow>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b3c27003-42a7-4ad4-a7eb-b05148ee3e08" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://localhost:7986/WPFHost/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="8bdf64b0-3362-433d-a712-65b371917605" SourceId="1" SourceUrl="net.tcp://localhost:7986/WPFHost/mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="0f5f7c13-0a7c-4462-92ef-0f417d555e5d" SourceId="1" SourceUrl="net.tcp://localhost:7986/WPFHost/mex" />
+    <MetadataFile FileName="service21.xsd" MetadataType="Schema" ID="a2befb8c-b39f-4209-9420-0b0a089e1536" SourceId="1" SourceUrl="net.tcp://localhost:7986/WPFHost/mex" />
+    <MetadataFile FileName="WpfHost1.xsd" MetadataType="Schema" ID="253b340d-302c-4ddc-af60-03cb4c1f5da2" SourceId="1" SourceUrl="net.tcp://localhost:7986/WPFHost/mex" />
+    <MetadataFile FileName="Arrays1.xsd" MetadataType="Schema" ID="4f537be0-50c3-4ca4-bb3d-368b33231ab7" SourceId="1" SourceUrl="net.tcp://localhost:7986/WPFHost/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

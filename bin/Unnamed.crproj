@@ -1,0 +1,14 @@
+<project outputDir="D:\29112018\MedSoft\MedicusDemo\bin\Confused" baseDir="D:\29112018\MedSoft\MedicusDemo\bin\Medicus" xmlns="http://confuser.codeplex.com">
+  <rule pattern="true" inherit="false">
+    <protection id="anti ildasm" />
+    <protection id="anti tamper" />
+    <protection id="constants" />
+  </rule>
+  <module path="Medicus.exe">
+    <rule pattern="true" inherit="false">
+      <protection id="anti ildasm" />
+      <protection id="anti tamper" />
+      <protection id="constants" />
+    </rule>
+  </module>
+</project>

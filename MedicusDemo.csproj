@@ -1,0 +1,1441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4CE5A2D4-15D4-41BC-B789-9815C11088AC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Medicus</RootNamespace>
+    <AssemblyName>Medicus</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>G:\setupclient\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>17</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+    <BootstrapperComponentsUrl>\\setupgestionclinique\DotNetFX46</BootstrapperComponentsUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Medicus\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>24A561A5C5A1D6649D5F5A8CFADFD1FC9C484BC2</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>GestionClinique_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\Dent6.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AeroWizard, Version=2.1.8.0, Culture=neutral, PublicKeyToken=915e74f5d64b8f37, processorArchitecture=MSIL">
+      <HintPath>..\packages\AeroWizard.2.1.8\lib\net452\AeroWizard.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Aviad.WPF.Controls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Aviad.WPF.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Diagram.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v17.1.Export, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Spreadsheet.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v17.1.UI, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpf.Charts.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Controls.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.DataAccess.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Diagram.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Docking.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.DocumentViewer.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Layout.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.LayoutControl.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.NavBar.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.PivotGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Printing.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.PropertyGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.ReportDesigner.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Ribbon.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.RichEdit.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Spreadsheet.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2010Black.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.Xpf.Themes.Office2010Black.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2016White.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.Xpf.Themes.Office2016White.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v17.1.Extensions, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="dragonz.actb">
+      <HintPath>..\packages\dragonz.actb.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.NetFwTypeLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Interop.NetFwTypeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Madaa.Lib.Win.Services">
+      <HintPath>..\transaction\Madaa.Lib.Win.Services\Madaa.Lib.Win.Services\bin\Debug\Madaa.Lib.Win.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.2.2.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.2.2.0\lib\net45\MahApps.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.2015.Runtime.12.0.2.2402\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.2015.Runtime.12.0.2.2402\lib\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.2015.Runtime.12.0.2.2402\lib\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Controls.DataVisualization.Toolkit.4.0.0.0\lib\net40-Client\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WPFToolkit.3.5.50211.1\lib\System.Windows.Controls.Input.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Layout.Toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WPFToolkit.3.5.50211.1\lib\System.Windows.Controls.Layout.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.2.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WpfAnimatedGif, Version=1.4.15.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WpfAnimatedGif.1.4.15\lib\net\WpfAnimatedGif.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WPFToolkit.3.5.50211.1\lib\WPFToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Aceuill.xaml.cs">
+      <DependentUpon>Aceuill.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\AjouterActe.xaml.cs">
+      <DependentUpon>AjouterActe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\AjouterCatalogue.xaml.cs">
+      <DependentUpon>AjouterCatalogue.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\AjouterDictionnaire.xaml.cs">
+      <DependentUpon>AjouterDictionnaire.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\AjouterMedecin.xaml.cs">
+      <DependentUpon>AjouterMedecin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\AjouterMotifDepense.xaml.cs">
+      <DependentUpon>AjouterMotifDepense.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\AjouterMotifVisite.xaml.cs">
+      <DependentUpon>AjouterMotifVisite.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\AjouterSession.xaml.cs">
+      <DependentUpon>AjouterSession.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\AjouterSpécialité.xaml.cs">
+      <DependentUpon>AjouterSpécialité.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\AjouterTypeCas.xaml.cs">
+      <DependentUpon>AjouterTypeCas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\ColorPalete.xaml.cs">
+      <DependentUpon>ColorPalete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\DictionnaireListe.xaml.cs">
+      <DependentUpon>DictionnaireListe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Entête.xaml.cs">
+      <DependentUpon>Entête.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\ICallback.cs" />
+    <Compile Include="Administrateur\ImpressionListeTypeCas.xaml.cs">
+      <DependentUpon>ImpressionListeTypeCas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\ImpressionMotif.xaml.cs">
+      <DependentUpon>ImpressionMotif.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\ImpressionMotifDepense.xaml.cs">
+      <DependentUpon>ImpressionMotifDepense.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\ImpressionOneMedecin.xaml.cs">
+      <DependentUpon>ImpressionOneMedecin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\ImpressionOneSession.xaml.cs">
+      <DependentUpon>ImpressionOneSession.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\ImpressionSession.xaml.cs">
+      <DependentUpon>ImpressionSession.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\ImpressionSpécialité.xaml.cs">
+      <DependentUpon>ImpressionSpécialité.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\ImpresssionMedecin.xaml.cs">
+      <DependentUpon>ImpresssionMedecin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\ListeActe.xaml.cs">
+      <DependentUpon>ListeActe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\ListeDesCatalogue.xaml.cs">
+      <DependentUpon>ListeDesCatalogue.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\ListeMedecin.xaml.cs">
+      <DependentUpon>ListeMedecin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\ListeMotifVisite.xaml.cs">
+      <DependentUpon>ListeMotifVisite.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\ListeSession.xaml.cs">
+      <DependentUpon>ListeSession.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\ListeSpécialitéMedecin.xaml.cs">
+      <DependentUpon>ListeSpécialitéMedecin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\ListeTypeCas.xaml.cs">
+      <DependentUpon>ListeTypeCas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\ListMotifDepense.xaml.cs">
+      <DependentUpon>ListMotifDepense.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\MainAdministrateur.xaml.cs">
+      <DependentUpon>MainAdministrateur.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\OperationDatagrid.cs" />
+    <Compile Include="Administrateur\OrdoParam.xaml.cs">
+      <DependentUpon>OrdoParam.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\ParamétreColor.xaml.cs">
+      <DependentUpon>ParamétreColor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrateur\WPFBrushList.cs" />
+    <Compile Include="Authentification.xaml.cs">
+      <DependentUpon>Authentification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Caisse\AjouterTransaction.xaml.cs">
+      <DependentUpon>AjouterTransaction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Caisse\Caisse.xaml.cs">
+      <DependentUpon>Caisse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Caisse\ImpressionMouvement.xaml.cs">
+      <DependentUpon>ImpressionMouvement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Caisse\ImpressionRecu.xaml.cs">
+      <DependentUpon>ImpressionRecu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Chat.xaml.cs">
+      <DependentUpon>Chat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ColorPicker\ColorDialog.xaml.cs">
+      <DependentUpon>ColorDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ColorPicker\ColorPicker.xaml.cs">
+      <DependentUpon>ColorPicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentImportant\Dictionnaire.xaml.cs">
+      <DependentUpon>Dictionnaire.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentImportant\DétailTerminologie.xaml.cs" />
+    <Compile Include="DXWindowMain.xaml.cs">
+      <DependentUpon>DXWindowMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editeur.xaml.cs">
+      <DependentUpon>Editeur.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EtatEtRapport\ArretDetravail.cs" />
+    <Compile Include="EtatEtRapport\CertificatRapport.xaml.cs">
+      <DependentUpon>CertificatRapport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EtatEtRapport\ImpressionArret.xaml.cs">
+      <DependentUpon>ImpressionArret.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EtatEtRapport\ImpressionTableauDeBord.xaml.cs">
+      <DependentUpon>ImpressionTableauDeBord.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EtatEtRapport\ImpressionVisite.xaml.cs">
+      <DependentUpon>ImpressionVisite.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EtatEtRapport\RapportCertificat.cs" />
+    <Compile Include="EtatEtRapport\ReglementPatient.xaml.cs">
+      <DependentUpon>ReglementPatient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EtatEtRapport\TableauDeBord.xaml.cs">
+      <DependentUpon>TableauDeBord.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EtatEtRapport\TableauDeBordClass.cs" />
+    <Compile Include="FeuilleCalcule.xaml.cs">
+      <DependentUpon>FeuilleCalcule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FileDattente\Arrivée.xaml.cs">
+      <DependentUpon>Arrivée.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FileDattente\EcranFilleAttente.xaml.cs">
+      <DependentUpon>EcranFilleAttente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FileDattente\ImpressionSalleAttente.xaml.cs">
+      <DependentUpon>ImpressionSalleAttente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FileDattente\SalleDattente.xaml.cs">
+      <DependentUpon>SalleDattente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListePatientHome.xaml.cs">
+      <DependentUpon>ListePatientHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\BonExamen.xaml.cs">
+      <DependentUpon>BonExamen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\Dicom.xaml.cs">
+      <DependentUpon>Dicom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\DicomDecoder.cs" />
+    <Compile Include="Patient\DicomDictionary.cs" />
+    <Compile Include="Patient\DossierPatient.xaml.cs">
+      <DependentUpon>DossierPatient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\ExamenCom.cs" />
+    <Compile Include="Patient\ExamenRadiologie.cs" />
+    <Compile Include="Patient\FichePatient.xaml.cs">
+      <DependentUpon>FichePatient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\HistoriqueConstante.xaml.cs">
+      <DependentUpon>HistoriqueConstante.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\ImagePanelControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Patient\ImagePanelControl1.designer.cs">
+      <DependentUpon>ImagePanelControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\ImagePanelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Patient\ImagePanelControl.designer.cs">
+      <DependentUpon>ImagePanelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\ImpressionAutreBilan.xaml.cs">
+      <DependentUpon>ImpressionAutreBilan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\ImpressionBonExamen.xaml.cs">
+      <DependentUpon>ImpressionBonExamen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\ImpressionDiagnostic.xaml.cs">
+      <DependentUpon>ImpressionDiagnostic.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\ImpressionExamenRadio.xaml.cs">
+      <DependentUpon>ImpressionExamenRadio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\ImpressionListeConstante.xaml.cs">
+      <DependentUpon>ImpressionListeConstante.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\ImpressionOneConstante.xaml.cs">
+      <DependentUpon>ImpressionOneConstante.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\ImpressionOneVisite.xaml.cs">
+      <DependentUpon>ImpressionOneVisite.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\ImpressionOrdonnance.xaml.cs">
+      <DependentUpon>ImpressionOrdonnance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\ListePatient.xaml.cs">
+      <DependentUpon>ListePatient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\NewPatient.xaml.cs">
+      <DependentUpon>NewPatient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\ReportListePatient.xaml.cs">
+      <DependentUpon>ReportListePatient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\ReportPatient.xaml.cs">
+      <DependentUpon>ReportPatient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\VersementPatient.xaml.cs">
+      <DependentUpon>VersementPatient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\VisiteAs.xaml.cs">
+      <DependentUpon>VisiteAs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\WindowLevelGraphControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Patient\WindowLevelGraphControl.Designer.cs">
+      <DependentUpon>WindowLevelGraphControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RendezVous\AutoComplete.xaml.cs">
+      <DependentUpon>AutoComplete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RendezVous\CalenderBackground.cs" />
+    <Compile Include="RendezVous\ImpressionListeRendezVous.xaml.cs">
+      <DependentUpon>ImpressionListeRendezVous.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RendezVous\ImpressionTicket.xaml.cs">
+      <DependentUpon>ImpressionTicket.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RendezVous\ListeRendezVous.xaml.cs">
+      <DependentUpon>ListeRendezVous.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RendezVous\PrendreRendezVous.xaml.cs">
+      <DependentUpon>PrendreRendezVous.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RendezVous\RendezVous.xaml.cs">
+      <DependentUpon>RendezVous.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RTFEditor\FontHeight.cs" />
+    <Compile Include="RTFEditor\FontList.cs" />
+    <Compile Include="RTFEditor\RTFBox.xaml.cs">
+      <DependentUpon>RTFBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SVC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\AjouterDci.xaml.cs">
+      <DependentUpon>AjouterDci.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\AjouterProduitOrdonnance.xaml.cs">
+      <DependentUpon>AjouterProduitOrdonnance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\ListeDeProduitPourOronnance.xaml.cs">
+      <DependentUpon>ListeDeProduitPourOronnance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\ListeDesDci.xaml.cs">
+      <DependentUpon>ListeDesDci.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Aceuill.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Administrateur\AjouterActe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\AjouterCatalogue.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\AjouterDictionnaire.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Administrateur\AjouterMedecin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\AjouterMotifDepense.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\AjouterMotifVisite.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\AjouterSession.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\AjouterSpécialité.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\AjouterTypeCas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\ColorPalete.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\DictionnaireListe.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Administrateur\Entête.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\ImpressionListeTypeCas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\ImpressionMotif.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\ImpressionMotifDepense.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\ImpressionOneMedecin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\ImpressionOneSession.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\ImpressionSession.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\ImpressionSpécialité.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\ImpresssionMedecin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\ListeActe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\ListeDesCatalogue.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\ListeMedecin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\ListeMotifVisite.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\ListeSession.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\ListeSpécialitéMedecin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\ListeTypeCas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\ListMotifDepense.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\MainAdministrateur.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\OrdoParam.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrateur\ParamétreColor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Authentification.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Caisse\AjouterTransaction.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Caisse\Caisse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Caisse\ImpressionMouvement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Caisse\ImpressionRecu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Chat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ColorPicker\ColorDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ColorPicker\ColorPicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DocumentImportant\Dictionnaire.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DocumentImportant\DétailTerminologie.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DXWindowMain.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Editeur.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EtatEtRapport\CertificatRapport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EtatEtRapport\ImpressionArret.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EtatEtRapport\ImpressionTableauDeBord.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EtatEtRapport\ImpressionVisite.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EtatEtRapport\ReglementPatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EtatEtRapport\TableauDeBord.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FeuilleCalcule.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FileDattente\Arrivée.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FileDattente\EcranFilleAttente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FileDattente\ImpressionSalleAttente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FileDattente\SalleDattente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListePatientHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Patient\BonExamen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patient\Dicom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patient\DossierPatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patient\FichePatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patient\HistoriqueConstante.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patient\ImpressionAutreBilan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patient\ImpressionBonExamen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patient\ImpressionDiagnostic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patient\ImpressionExamenRadio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patient\ImpressionListeConstante.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patient\ImpressionOneConstante.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patient\ImpressionOneVisite.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patient\ImpressionOrdonnance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patient\ListePatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patient\NewPatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patient\ReportListePatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patient\ReportPatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patient\VersementPatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patient\VisiteAs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RendezVous\AutoComplete.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RendezVous\ImpressionListeRendezVous.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RendezVous\ImpressionTicket.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RendezVous\ListeRendezVous.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RendezVous\PrendreRendezVous.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RendezVous\RendezVous.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RendezVous\Styles\AutoComplete.Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RendezVous\Styles\ComboBox.Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RTFEditor\RTFBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Stock\AjouterDci.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stock\AjouterProduitOrdonnance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stock\ListeDeProduitPourOronnance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stock\ListeDesDci.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Administrateur\ReportListeMotifDepense.rdlc" />
+    <EmbeddedResource Include="Administrateur\ReportListeMotif.rdlc" />
+    <EmbeddedResource Include="Administrateur\ReportListeSpecialité.rdlc" />
+    <EmbeddedResource Include="Administrateur\ReportListeTypeCas.rdlc" />
+    <EmbeddedResource Include="Administrateur\ReportMedecin.rdlc" />
+    <EmbeddedResource Include="Administrateur\ReportMembership.rdlc" />
+    <EmbeddedResource Include="Administrateur\ReportOneMedecin.rdlc" />
+    <EmbeddedResource Include="Caisse\MouvementCaisse.rdlc" />
+    <EmbeddedResource Include="Caisse\RecuDePaiement.rdlc" />
+    <EmbeddedResource Include="Caisse\ReportCaisse.rdlc" />
+    <EmbeddedResource Include="EtatEtRapport\ArretDeTravail.rdlc" />
+    <EmbeddedResource Include="EtatEtRapport\CertificationMedical.rdlc" />
+    <EmbeddedResource Include="EtatEtRapport\ReportCredti.rdlc" />
+    <EmbeddedResource Include="EtatEtRapport\ReportTableauDeBord.rdlc" />
+    <EmbeddedResource Include="EtatEtRapport\ReportVisiteDetailPatient.rdlc" />
+    <None Include="DocumentImportant\IMC.rtf" />
+    <None Include="EtatEtRapport\VisiteGeneral.rdlc" />
+    <EmbeddedResource Include="FileDattente\ListeDattente.rdlc" />
+    <EmbeddedResource Include="Patient\AutreBilan.rdlc" />
+    <EmbeddedResource Include="Patient\BonExamenRadio.rdlc" />
+    <EmbeddedResource Include="Patient\ConsultationClinique.rdlc" />
+    <EmbeddedResource Include="Patient\DiagnosticDiab.rdlc" />
+    <EmbeddedResource Include="Patient\ImagePanelControl1.resx">
+      <DependentUpon>ImagePanelControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient\ImagePanelControl.resx">
+      <DependentUpon>ImagePanelControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient\Ordonnance.rdlc" />
+    <EmbeddedResource Include="Patient\OrdonnanceA4.rdlc" />
+    <EmbeddedResource Include="Patient\ReportBonExamen.rdlc" />
+    <EmbeddedResource Include="Patient\ReportConstante.rdlc" />
+    <EmbeddedResource Include="Patient\ReportOneConstante.rdlc" />
+    <EmbeddedResource Include="Patient\ReportOnePatient.rdlc" />
+    <EmbeddedResource Include="Patient\ReportOneVisite.rdlc" />
+    <EmbeddedResource Include="Patient\ReportPatients.rdlc" />
+    <EmbeddedResource Include="Patient\WindowLevelGraphControl.resx" />
+    <EmbeddedResource Include="Administrateur\ReportOneMembership.rdlc" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RendezVous\ListeRendezVous.rdlc" />
+    <EmbeddedResource Include="RendezVous\ReportRendezVous.rdlc" />
+    <None Include="Properties\DataSources\GestionClinique.Patient.Examen.datasource" />
+    <None Include="Properties\DataSources\GestionClinique.Patient.ExamenCom.datasource" />
+    <None Include="Properties\DataSources\GestionClinique.Patient.ExamenRadiologie.datasource" />
+    <None Include="Service References\SVC\Arrays1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.Acte.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.ArretDetravail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.AutreBilan.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.CasTraitement.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.Catalogue.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.Client.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.Constante.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.Dci.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.DepeiementMultiple.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.Depeiment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.Depense.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.Diagnostic.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.DicomFichier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.Dictionnaire.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.EnteteOrdonnace.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.ExclusionDay.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.Medecin.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.Membership.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.MotifDepense.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.MotifVisite.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.OrdonnancePatient.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.Param.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.Patient.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.ProduitOrdonnance.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.RendezVou.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.SalleDattente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.Spécialité.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.TypeCa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\Medicus.SVC.Visite.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SVC\service1.wsdl" />
+    <None Include="Service References\SVC\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SVC\service21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SVC\WpfHost1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GestionClinique_TemporaryKey.pfx" />
+    <None Include="Images\c27417_6c868036026d40c6b21a6bcc4909e5d9.jpg_srz_940_940_85_22_0.50_1.20_0.00_jpg_srz" />
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\DataSources\GestionClinique.EtatEtRapport.ArretDetravail.datasource" />
+    <None Include="Properties\DataSources\GestionClinique.EtatEtRapport.RapportCertificat.datasource" />
+    <None Include="Properties\DataSources\GestionClinique.EtatEtRapport.TableauDeBordClass.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RendezVous\Images\calendrier.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RendezVous\Images\caisse.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Administrateur\Images\cancel.png" />
+    <Resource Include="Administrateur\Images\Client.png" />
+    <Resource Include="Administrateur\Images\notes - Copie.jpg" />
+    <Resource Include="Administrateur\Images\notes.jpg" />
+    <Resource Include="Administrateur\Images\valider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Administrateur\Images\MedecinCreation.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SVC\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SVC\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SVC\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SVC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AGENDA.jpg" />
+    <Resource Include="Images\cancel.png" />
+    <Resource Include="Images\Client.png" />
+    <Resource Include="Images\delete.jpg" />
+    <Resource Include="Images\devis.jpg" />
+    <Resource Include="Images\edit.png" />
+    <Resource Include="Images\Fichier.png" />
+    <Resource Include="Images\Fournisseur.jpg" />
+    <Resource Include="Images\notes - Copie.jpg" />
+    <Resource Include="Images\notes.jpg" />
+    <Resource Include="Images\nouveau.png" />
+    <Resource Include="Images\valider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Administrateur\Images\Authentification.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Administrateur\Images\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.ReportViewer.12.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Report Viewer 2014 Runtime</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SqlServer.SQLSysClrTypes.12.0.x64">
+      <Visible>False</Visible>
+      <ProductName>Microsoft® System CLR Types for SQL Server® 2014 %28x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VSTORuntime.4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Studio 2010 Tools for Office Runtime %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="MahApps.Metro.pdb">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\1459361047_calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\1459361832_add_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\1459362003_conference.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\1459362267_stack_of_photos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PrendreRendezVous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="RendezVous\Entity\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\1462492621_search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RendezVous\Images\box.png" />
+    <Resource Include="RendezVous\Images\circle.png" />
+    <Resource Include="RendezVous\Images\cross.png" />
+    <Resource Include="RendezVous\Images\gray.png" />
+    <Resource Include="RendezVous\Images\Tjek.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RendezVous\Images\date-kontact-icone-7580-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Administrateur\Images\edit_property.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Administrateur\Images\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Administrateur\Images\free-doctor-icon-download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Administrateur\Images\Computer_India1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PatientInconu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Dossier.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Administrateur\Images\1465601337_services.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logo_medecine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\1466088371_hand_cursor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Administrateur\Images\affichage-icone-3766-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Administrateur\Images\server-icon-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FileDattente\Images\FilleDattente.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FileDattente\Images\53564.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\1474994475_home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FileDattente\Images\flesh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FileDattente\Images\horloge-pour-mur-heures_318-32867.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Administrateur\Images\PalleteColor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FileDattente\Images\exit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FileDattente\Images\renommer-un-fichier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\fast_checkout_icon-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\47105.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\9d5fb_supplier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\1516_icon_suppliers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\nomenclature.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\WebHome_Medical_png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IPTEXTE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Bold.png" />
+    <Resource Include="Images\text-italic-xxl.png" />
+    <Resource Include="Images\underline_256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\suppdossier.png" />
+    <Resource Include="Images\salleattente.png" />
+    <Resource Include="Images\diabeto.png" />
+    <Resource Include="Images\Bonexamen.png" />
+    <Resource Include="Images\icone-livre.png" />
+    <Resource Include="Images\Dictionary_29937.png" />
+    <Resource Include="Images\monstock.png" />
+    <Resource Include="Images\Chate.png" />
+    <Resource Include="Images\Patienticon.png" />
+    <Resource Include="Images\system.png" />
+    <Resource Include="Images\5-Signs-You-Should-Leave-Your-Finance-Job-Sooner-than-Later.jpg" />
+    <Resource Include="Dent6.ico" />
+    <Resource Include="Images\Word_2013_file_icon.svg_.png" />
+    <Resource Include="Images\Triade-diasnostique-dentisterie-orthodontie-Sherbrooke-LG.jpg" />
+    <Resource Include="Images\supplier1600.png" />
+    <Resource Include="Images\Prestataire_logistique_distribution.png" />
+    <Resource Include="Images\pills_medicine_treatment_drug-512.png" />
+    <Resource Include="Images\pictogramme-aluminium-120x120-symbole-salle-dattente.png" />
+    <Resource Include="Images\param.png" />
+    <Resource Include="Images\notes_music_document_write-256.png" />
+    <Resource Include="Images\Listepatient.png" />
+    <Resource Include="Images\LISTEPROUIT.png" />
+    <Resource Include="Images\grafico.gif" />
+    <Resource Include="Images\gr3.jpeg" />
+    <Resource Include="Images\Gestion_de_stock_et_commandes_icone.png" />
+    <Resource Include="Images\FICHEPATIENT.png" />
+    <Resource Include="Images\f-dokumenty-magazynowe.png" />
+    <Resource Include="Images\Excel-Icon.png" />
+    <Resource Include="Images\chat-online-txt.png" />
+    <Resource Include="Images\consultationsimple.png" />
+    <Resource Include="Images\achatvente.jpg" />
+    <Resource Include="Images\le-diabete.jpg" />
+    <Resource Include="Images\medicalogitech.png" />
+    <None Include="facebookme_lZ4iKc6J.wav" />
+    <Resource Include="Images\logo-denta6.jpg" />
+    <Resource Include="Images\1001658-Denture_de_lenfant.jpg" />
+    <Resource Include="RTFEditor\Images\AlignCenter.png" />
+    <Resource Include="RTFEditor\Images\AlignLeft.png" />
+    <Resource Include="RTFEditor\Images\AlignRight.png" />
+    <Resource Include="RTFEditor\Images\Backcolor.png" />
+    <Resource Include="RTFEditor\Images\Bold.png" />
+    <Resource Include="RTFEditor\Images\BulletList.png" />
+    <Resource Include="RTFEditor\Images\Copy.png" />
+    <Resource Include="RTFEditor\Images\Cut.png" />
+    <Resource Include="RTFEditor\Images\Indent.png" />
+    <Resource Include="RTFEditor\Images\IndentRemove.png" />
+    <Resource Include="RTFEditor\Images\Italic.png" />
+    <Resource Include="RTFEditor\Images\NumbersList.png" />
+    <Resource Include="RTFEditor\Images\Open-48x48.png" />
+    <Resource Include="RTFEditor\Images\Open.png" />
+    <Resource Include="RTFEditor\Images\Paste.png" />
+    <Resource Include="RTFEditor\Images\Print.png" />
+    <Resource Include="RTFEditor\Images\Redo.png" />
+    <Resource Include="RTFEditor\Images\Strikeout.png" />
+    <Resource Include="RTFEditor\Images\Subscript.png" />
+    <Resource Include="RTFEditor\Images\Superscript.png" />
+    <Resource Include="RTFEditor\Images\Textcolor.png" />
+    <Resource Include="RTFEditor\Images\Underline.png" />
+    <Resource Include="RTFEditor\Images\Undo.png" />
+    <Resource Include="Images\logo.jpg" />
+    <Resource Include="Images\logo-denta6.png" />
+    <Resource Include="Images\Dent6.ico" />
+    <Resource Include="Images\logo-v3.png" />
+    <None Include="Resources\ImageIconLogiciel.png" />
+    <Resource Include="Images\soins-dentaires.png" />
+    <Resource Include="Images\dossier-manilla-sauvegardes-rechercher-icone-4021-128.png" />
+    <Resource Include="Images\mail-veuillez-envoyer-icone-3767-48.png" />
+    <Resource Include="Administrateur\Images\forum-groupe-utilisateurs-icone-4597-128.png" />
+    <Resource Include="Administrateur\Images\edit-find-vieux-remplacez-icone-7990-128.png" />
+    <Resource Include="Administrateur\Images\1456624077_add_user.png" />
+    <Resource Include="Administrateur\Images\1456624391_edit_user.png" />
+    <Resource Include="Administrateur\Images\1456624510_printer.png" />
+    <Resource Include="Administrateur\Images\1456624817_delete.png" />
+    <Content Include="ColorPicker\ColorPicker.csproj" />
+    <Resource Include="Images\vortex.png" />
+    <Resource Include="Images\fermer-croix-supprimer-erreurs-sortie-icone-4368-128.png" />
+    <Resource Include="Images\acept-verifier-corriger-vert-ok-oui-icone-9668-128.png" />
+    <Resource Include="Images\dossier-nouveau-icone-4594-128.png" />
+    <Resource Include="Images\supprimer-dossier-icone-4934-64.png" />
+    <Resource Include="Images\imprimer-icone-5268-128.png" />
+    <Resource Include="Images\modifier-icone-7876-96.png" />
+    <Resource Include="Images\User-Interface-Restore-Window-icon-150x150.png" />
+    <Resource Include="Images\minimize_thewindow_theapplication_2872.png" />
+    <Resource Include="Images\Odontogramme-FDI-numerotation-dentaire.png" />
+    <Resource Include="Images\supprimer-retirer-icone-9043-48.png" />
+    <Resource Include="Images\24h-rendez-vous-nouveaux-icone-3660-128.png" />
+    <Resource Include="Images\maison-maison-icone-3648-128.png" />
+    <Resource Include="Images\contact-liste-preferences-icone-4360-128.png" />
+    <Resource Include="RendezVous\prisedeRDV2.png" />
+    <Resource Include="Images\features-data-import.png" />
+    <Resource Include="Images\trash_empty_256.png" />
+    <Resource Include="Images\validerhy.png" />
+    <Resource Include="Images\compte-rendu.png" />
+    <Resource Include="Images\KmyR9uiu-istock-000002784166small.png" />
+    <Resource Include="FileDattente\Images\fleche %281%29.png" />
+    <Resource Include="FileDattente\Images\Arrow_Logo_by_JustMarDesign.png" />
+    <Resource Include="Images\patient-icon-png-3.png" />
+    <Resource Include="Images\MessageNew.png" />
+    <Resource Include="Images\13784.png" />
+    <Resource Include="Images\patient.png" />
+    <Resource Include="FileDattente\Images\534921.png" />
+    <Resource Include="FileDattente\Images\53492.png" />
+    <Resource Include="Images\patient_information_icon.jpg" />
+    <Resource Include="Images\1459362215_group.png" />
+    <Resource Include="Images\bookkeeping-accounting.png" />
+    <Resource Include="FileDattente\Images\fleche.png" />
+    <Resource Include="FileDattente\Images\fleche - Copie.png" />
+    <Resource Include="ColorPicker\Images\ColorSwatchCircle.png" />
+    <Resource Include="ColorPicker\Images\ColorSwatchSquare.png" />
+    <Resource Include="ColorPicker\Images\ColorSwatchSquare2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
